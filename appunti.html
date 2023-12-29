@@ -1,0 +1,1852 @@
+<!-- APPUNTI CORSO -->
+
+<!-- CONSOLE UNIX --> 
+<div>
+    <!-- Definizione -->
+    La Console Unix, detta anche Shell, è un'interfaccia di tipo testuale, l'utente può immettere dei comandi di testo tramite una linea di comando e i dati immessi successivamente vengono interpretati e inviati al sistema, l'output di testo viene comunque mostrato nella stessa interfaccia.
+
+    <!-- Sintassi degli elementi + info -->
+    Cartelle = nome con stanghetta = "ciao"
+    Collegamenti = @
+    File nascosti = punto + qualcosa = .ciao
+    Le cartelle non devono iniziare con un numero
+    Tasto su e giu posso andare a prendere i comandi utilizzati in precedenza
+    Tutte le cose con dei punti davanti sono nascosti
+    Le cose che cancelliamo non passano per il cestino, quindi stare attenti
+
+    <!-- Comandi -->
+    Dove ci troviamo = pwd 
+    Per tornare sempre da zero = cd
+    Lista delle cose in una cartella = ls 
+    Per vedere i file nascosti = ls -a 
+    Pulire la schermata = clear
+    Per aprire visual studio code, code . (punto apre tutti i file html in quella cartella)
+    Più comandi insieme = primocomando && secondocomando (ne posso mettere quanti ne voglio) ( il secondo e gli altri comandi vengono eseguiti solo se il primo comando funziona)
+
+        <!-- Comandi Cartella: -->
+        Entrare in una cartella = cd nomecartella 
+        Tornare alla cartella precedente: cd ..
+        Creare cartella = mkdir nomecartella (non mettere gli spazi, altrimenti dovresti mettere sempre “ “, meglio trattino o tratt basso)
+        Cancellare cartella vuota = rmdir nomecartella
+        Cancellare cartelle piene = rm -r nomecartella
+        Copiare cartella (mi fa copia e incolla) = cp -r cartelladacopiare doveincollare 
+        Cartella dove ci troviamo come percorso = ./
+        Entrare in una cartella come percorso = /
+        Tornare alla cartella precedente come percorso = ../
+
+        <!-- Comandi File -->
+        Creare File = touch nome con estensione (.txt)
+        Copiare File (mi fa copia e incolla) = cp filedacopiare doveincollare (cp test.txt cartella1)
+        Modificare file: vim filedamodificare 
+            Sotto a tutto vediamo che modalita siamo 
+            Insert per scrivere
+            Esc per uscire dalla modalità
+            I per tornare ad Insert
+            Esc per uscire dalla modalità
+            :w salva
+            :wq salva ed esci
+            :q ti da errore perché non hai salvato
+        Leggere contenuto file senza entrare nel file: cat filedaleggere
+        Cancellare file: rm filedacancellare
+        Taglia e Incolla: mv cosatagliare dovesalvare (è uguale a quello sotto, dipende dal secondo nome, se trova la cartella fa taglia e incolla, se non la trova fa rinonima)
+        Rinomina: mv cosarinominare nomenuovo
+</div>
+
+<!-- FRONT-END -->
+<div>
+    Front-End = La parte client
+    
+    <!-- 3 linguaggi -->
+    HTML = scheletro, la struttura, è imprescindibile, non esiste sito se non esiste HTML
+    CSS = parte di stile, colori, dimensione, organizzazione
+    Javascript = Da dinamicità al nostro sito
+
+    HTML e CSS sono linguaggi di mark up ma non sono linguaggi di programmazione
+    Javascript: linguaggio programmazione
+
+    SoC (seperation of concerns) (principi cardine della programmazione) = Lasciare ad ogni linguaggio il suo compito
+
+    CEO = punteggio di google per il mio sito (mi fa uscire primo o dopo un mio sito nella ricerca) 
+</div>
+
+<!-- VISUAL STUDIO CODE -->
+<div>
+    Strumento per editor testi e scrivere codice
+
+    Estensioni (non installarne troppi, perchè se alcun fanno la stessa cosa, vanno in contrasto, e poi si rallenta)
+
+    <!-- Short Cut -->
+    CTRL B = apri e chudi explorer 
+    CTRL C, V, X = copia, incolla, taglia 
+    CTRL S = salva  (pallino bianco sopra significa non salvato)
+    CTRL L = Seleziona la riga 
+    CTRL A = Seleziona tutto documento
+    CTRL Z = Tornare indietro
+    CTRL Y = Ripristina l’ultimo 
+    CTRL D = multiselettore - ESC per uscire dalla multiselezione 
+    CTRL F = cerca nel mio foglio
+    CTRL TAB = passare a un foglio e un altro
+    ALT + FRECCE = Muovere righe di codice
+    CTRL + ù = per mettere commento
+    CTRL + P = Ricerca file nella cartella
+    CTRL SHIFT P = Ricerca opzioni che possiamo attivare
+    ALT + Z = Attiva e disattiva il mandare a capo
+    ! o html 5 (5 ultima versione html, che dicono perfetta) = Struttura base HTML
+    ALT SHIFT FRECCIA GIU = Copia e incolla della riga subito sotto
+</div>
+
+<!-- HTML -->
+<div>
+    <!-- Definizioni -->
+    Ogni sito web deve avere per forza un file .html
+    Doctype esiste solo in html 5 = non è una scritta html, ma ci dice che parte html da li
+    html inizia e finisce con tag html
+    Attributi: coppie chiave - valore, (prime parole: chiave, seconda parola: valore)(<ul type=”..”>)
+    Indentazione = sistemare il documento (si può fare anche tramite CTRL SHIFT P indent)
+    Responsive = ottimizzazione del nostro sito sui vari device, smartphone, comp, tablet
+    <!-- W3school --> puoi trovare tantissime info che riguardano HTML e CSS
+
+    <!-- Struttura Html: -->
+    head = come il cervello del nostro sito, tutte le cose che servono per far funzionare il nostro sito
+    meta Charset = i caratteri accettati
+    UTF-8 = comprende la maggior parte dei caratteri 
+    meta name = come si deve adattare ai vari schermi (smartphone, comp, tablet)
+    title = unico tag all'interno della head che possiamo vedere = titolo tab
+    body = contenuto sito
+
+    <!-- Tag -->
+    Due tipi di tag:
+    Tag che si aprono e chiudono
+    Tag che si chiudono da soli, non hanno bisogno della chiusura (self-closing)
+
+    I tag sono divisi in macrocategorie:
+    Tag generici
+    Tag semantici (danno informazioni diverse al nostro browser)
+
+        <!-- Tag generici -->
+        div = vanno a capo = utilizza tutto lo spazio orizzontale
+        span = vanno uno a lato all’altro = occupa solo il suo spazio
+        (se vai su ispeziona sul sito e vai su body, cliccando sopra i tag capisci come funzionano)
+        br = tag che serve andare a capo (usare tipo per le poesie)
+
+            <!-- Tag testi -->
+            h1 - h6 = heading, cioè titoli (deve esistere un solo h1)
+            p = paragrafo  
+
+            <!-- Tag liste -->
+            <ul></ul> = unordered list
+                all'interno ha bisogno di un altro tag = <li></li> 
+            <ol></ol> = ordered list
+            all'interno ha bisogno di = <li></li>
+            <dl></dl> = apro lista
+            <dt></dt> = caffè
+            <dd></dd> = descrizione caffè
+
+            <!-- Tag Hypertext -->
+            Quando clicco su un link e mi porta da un'altra parte
+            <a href=”quiilsito”>quiilnome</a> (percorso assoluto se inserisco un sito internet, non puo cambiare) (rimane sulla stessa tab)
+            o 
+            <a href=”quiilsito” target=”_blank”>quiilnome</a> (mi apre una nuova tab)
+            o
+            <a href=”quilamiacartellaconilpercorso”>quiilnome</a>  (percorso relativo se inserisco un file del mio comp, posso spostare il file)
+            o 
+            <a href="#sezionedovevoglioandare"></a> e poi nella sezione specifica metterò id = "sezionedovevoglioandare" (per portarmi in un punto specifico del sito)
+
+            <!-- Tag Immagini -->
+            <img src=”quiilsito” alt=”seimmaginenonsivedeescequestonome”> (per i principi della SEO è importante scrivere anche quel nome alt)
+            o
+            <img src=”quilamiacartellaconilpercorso” alt=”seimmaginenonsivedeescequestonome”>
+            o
+            Si può fare anche tutta l'immagine cliccabile, mettendo tutto all'interno di href
+
+            <!-- Tag Form -->
+            Da un significato che tutto quello che c'è all'interno fanno parte dello stesso form
+            alla fine c'è un pulsante e premendo quello inviera tutte quelle info a qualcosa
+            
+            Puo avere diversi tag all'interno
+            <form>
+                input type=”text” o “number” o “password” “email” ecc (crea barre per scrivere) 
+                input placeholeder = "" (nome quasi trasparente all'interno dell barra)
+                input required devi inserire per forza qualcosa in quella parte
+                textarea cols=”grandezza” rows=”grandezza” 
+                label = metto il nome all'esterno della barra
+                button = pulsante (possiamo mettere attributi es. type=”submit” ci servirà per la parte backend)
+            </form>
+
+            <!-- Tag di Formattazione -->
+            hr (non ha bisogno di chiusura, self closing) = crea una linea divisoria
+
+            <!-- Tag Semantici -->
+            Comunicano qualcosa al Browser, non hanno funzioni diverse
+
+                strong = grassetto
+                em = corsivo
+                (sono semantici perché stanno comunicando al browser che sono parole chiave)
+                (esistono anche due generici per grassetto e corsivo b e i)
+
+            <!-- Esistono alcuni attributi generici -->
+            label for=”inputname”
+            input id =”inputname”
+            Servono per creare collegamenti (vedremo in backend)
+
+            <!-- Come è strutturato un sito -->
+            navbar
+            header
+            main
+            section
+            article
+            footer
+
+            nav (si comporta come div) = barra di navigazione 
+            header (si comporta come div) = parte in alto del sito
+            main (si comporta come div) = corpo principale del mio sito
+                all'interno del main ci saranno diverse sezioni (section)
+                    All'interno delle sezioni ci sono i diversi article (article)
+            footer (si comporta come div) = piè pagina
+            aside = cose che non c'entrano niente con il sito, tipo banner pubblicitario (questo è importante farlo capire al SEO)
+</div>
+
+<!-- CSS -->
+<div>
+PREMESSA
+Avremo sempre un file index.html e un file style.css    
+    <!-- Definizione -->
+    Acronimo: (leggi su internet) a cascata
+        Linguaggio che ci permette di fare tantecose, colori + ridimensionamento e posizionamento, animazioni
+        Ci permette di frae il sito responsive, molti partono direttamente dal cell e poi 
+        DOBBIAMO SEMPRE AVERE UN FILE index.html di riferimento
+
+        Ci sono diversi modi per risolvere un problema
+
+    <!-- Scorciatoia -->
+    div.box mi fa uscire direttamente class box
+
+    <!-- Come inserire CSS nel nostro documento: 3 modi -->   
+
+        <!-- Primo modo: style in line (MAI USARE)  --> 
+        <h1 style="quicolore">quinome</h1>
+
+        <!-- Secondo modo: stile interno-->
+        <style></style> all'interno del <head></head> (a inizio del documento)
+
+        <!-- Terzo modo: foglie di stile esterno (si usa quasi sempre questo, sia per performarce sia per pulizia) -->
+        Si crea un altro file .css (che chiameremo sempre style.css)
+        Quindi avremo un file.html e un file.css (sul secondo faremo tutte le modifiche) 
+            Sul file.html creiamo sotto <title></title>: 
+                <link rel="stylesheet" href="quiilpercorsoperarrivarealnostrofilecss">
+                (posso mettere anche più folgi css, e vince sempre quello sotto)
+
+    <!-- Principio Dry = Don't repeat yourself -->
+    Dobbiamo cercare di non replicare sempre le stesse cose
+
+    <!-- Selettori: ci servono a selezionare solo alcune cose -->
+    cerchiamo sempre di utilizzare nomi che ci trasmettono qualcosa
+    in css chi è più in basso, vince contro più in alto (principio a cascata)
+
+        <!-- Selettore generico * (usato poco) -->
+        Seleziona tutti gli elementi del nosto html
+        * {
+            color: red;
+        }
+    
+        <!-- Selettore per tag (usato poco)-->
+        Seleziona tutti i tag che ho specificato:
+        h1 {
+            color: red;
+        }
+    
+        <!-- Multiselettore , (usato poco)-->
+        Per catturare più tag insieme
+        h1, p, ecc {
+            colore: red;
+        } 
+
+        <!-- Selettore per paternità > -->
+        Selezionare solo un tag che è figlio di un altro 
+        div > p {
+            color: green;
+        }
+        questo significa che va a dare caratteristiche solo al p figlio di div
+        cioe quello che in html è:
+        <div>
+            <p></p>
+        </div>
+
+        <!-- Selettore specifico per id # (lo posso usare solo una volta)-->
+        In html mettiamo l'attributo: id  
+        In css per richiamarlo usiamo #
+        # {
+            color: red;
+        }
+
+        <!-- Selettore per classe (USATO NEL 95% DEI CASI) -->
+        la classe: è un attributo generico che possiamo associare a qualsiasi tag html
+            La chiave: sempre class,
+            Valore è un nome che scegliamo noi (cerchiamo di renderlo parlante)
+
+        Su html <div class="quinome"></div>
+        Su css:
+        .quinome{
+            color: red;
+        }
+
+    <!-- Principio Specificità -->
+    Più un selettore è specifico più andrà a vincere su altri elementi
+
+    <!-- Chi vince su chi -->
+    !important messo su .css vince su tutti quanti
+    style in line vince su tutti gli altri (il primo metodo, ma non usarlo mai)
+    id vince sulla classe
+    la classe vince sul quello per tag
+    quello per tag vince su quello generale
+    (un codice scritto bene non ha nessun !important, altrimenti dovresti sempre sovrascrivere su quello)
+
+    <!-- Alcune proprietà vengono ereditate da quelle che si trovano all'interno -->
+
+    <!-- Alcune Proprietà CSS -->
+
+        Colore: quattro modi per scegliere colore
+        color: 
+            1 scegli dalla palette
+            2 rgb: utilizzare i numeri specifici per quel colore
+            3 rgba:posso decidere anche la trasparenza (c'è una barra a destra)
+            4 esa decimale: #54576
+        
+        backgorund-color
+
+        background-image: url(); o prendo immagine online, o prendo immagine della cartella
+            qui posso usare 
+
+        background (url () = per aggiungere la foto) = anche questo posso usarlo per mettere immagini e modificare il background (posso sovrapporre anche più foto, quella che metto per prima andrà sopra le altre)
+            linear-gradient = (2 colori) parte dal primo colore e lo sfuma verso il secondo colore (può essere usato solo sul background) (possiamo usare CSS gradiente (google) per fare l'effetto)
+
+        background-position 
+            posizione 
+
+        background-size: 
+            cover = si adatta allo schermo, anche se la rovina
+            contain = cerca di lasciarmi la immagine nelle sue dimensioni adattandosi all'altezzza
+            
+        Altezza (la maggior parte dei problemi è sulle altezze e non sulle larghezze)
+        height: stabilisce l'altezza del colore 
+            1 in pixel, 500px
+            2 percentuale: per il sito web l'altezza è infinita, quindi la pecentuale non funziona; però se il tag si trova all'interno ad un altro tag, la percentuale si può mettere perché si riferisce allo spazio del tag padre 
+            3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vh (di solito si usa per l'header iniziale), se scrivo troppo il testo puo uscire fuori
+
+        min-height: si adatta in base a quanto scriviamo, cosi il testo non esce fuori: dipende molto da situazione a situazione
+
+        Larghezza
+        width:stabilisce la larghezza del colore
+            1 in pixel
+            2 percentuale: 50%
+            3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vw (molto più raro) 
+        
+        min-width
+        
+        text-align: dove si posiziona il testo
+            center, left, right, end
+            justify = giustificare testo
+
+        front-size: grandezza del testo
+            o unità di msura proposta da VSC
+            o mettere pixel: 70px
+
+        font-weight: quanto deve essere spessa la scritta
+
+        font-family: che tipo di font vogliamo usare
+            possiamo anche metterle io esternamente (non è stato spiegato)
+
+        box model: esiste per tutti gli elementi (esempio bottone)
+            contenuto
+            padding: 
+            border:
+                grandezza tipologia colore
+                es 2px solid red (solid fa creare dei box)
+            border-radius: serve per smussare gli angoli, o dare una forma diversa agli elementi
+            margin: spazio esterno (SERVE SOLO PER CREARE UN PO' DI SPAZIO TRA UN ELEMENTO ED UN ALTRO, NON SERVE PER POSIZIONARE GLI ELMENTI IN UNA PAGINA)
+
+        text-decoration: (deve andare nel tag <a href=""></a> )
+            none: per eliminare le sottolineature
+
+        list-style-type: (deve andare nel tag <ul></ul> )
+            none: toglie pallini nella lista 
+
+
+        tutti questi valori possono essere modificati tramite css 
+        in generale se metto 1 valore, è un quadrato, se  metto 2 valori è altezza e larghezza ecc.
+
+    <!-- Info utili -->
+    Molti elementi hanno delle proprietà di base
+    Se non c'è nessun contenuto (es <div></div>) del css non prende niente (altezza è zero, quindi se vogliamo far vedere modifiche css dobbiamo mettere almeno l'altezza in css)
+    Utilizziamo sempre background perchè ci fa capire lo spazio che occupa un elemento
+    
+    <!-- Proprietà per posizionare e allineare elementi -->
+
+        display = 
+            block = occupa tutta la riga (alcuni ce l'hanno di default) (qui posso modificare larghezza e altezza) (con margin possono spostarsi orizzontalmente e verticalmente)
+
+            inline = occupa solo il suo spazio (inline non possono modificare larghezza e altezza) (con margin possono spostarsi solo orizzontalmente e non verticalmente)
+
+            inline-block = prende le carittiristiche migliori di quello sopra (quindi qui per esempio posso modificare larghezza e altezza) (con margin posso sposarmi orizzontalmente e verticalmente) (gli elemtni con inline-block possono andare uno accanto all'altro)
+
+                Button = ha già la caratteristica inline-block 
+
+            none = non fa mostrare l'elemento (fa scomparire l'elemento) (tipo con i menu tendina, che fa scomparire e comparire il menu)
+
+            flex = assegna l'inline block a tutti i figli di quell'elemento, quindi tutto va di fianco (SOLO I TAG FIGLI DIRETTI diventeranno inline-block)  
+            Es.
+            <div>
+                <h2>
+                    <p></p>
+                </h2>
+            </div>
+            
+        justify-content = serve ad allineare gli elementi su asse x (saranno sempre al centro della schermata, in tutte le schermate)
+        (FUNZIONA SOLO CON DISPLAY: FLEX)
+            
+            center = mette al centro
+            
+            space-between = creare anche il massimo spazio tra di loro (in base allo spazio che ha a disposizione, in base al contenitore dove si trovano)   Iqui qui quiI
+
+            space-around = prende anche lo spazio all'inizio e alla fine del primo e terzo elemento     (quelli in mezzo di spazi sono il doppio di quelli laterali)  I qui  qui  qui I
+
+            space-evenly= prende lo spazio all'inizio e alla fine, tutti gli spazi uguali I  qui  qui  qui  I
+
+        align-items = posizioniamo gli elmenti sull' asse y  
+        (FUNZIONA SOLO CON DISPLAY: FLEX)
+            
+            baseline = sopra
+            center = centro
+            end = alla fine
+
+        flex-wrap = fa andare a capo gli elementi 
+            
+            nowrap = non va capo
+            wrap = va a capo
+
+        flex-direction = serve a disporre gli elemti in verticale e orizzontale
+        (QUANDO USIAMO FLEX DIRECTION ASSE X E ASSE Y SI INVERTONO)
+
+            row = permette di posizionare gli elementi uno accanto all'altro
+            column = permette metterli in colonna
+                
+        <!-- Altro modo per muovere gli elementi -->
+
+        position = sposta gli elementi (SPOSTA SOLO QUELL'ELEMENTO) (lo usiamo per fare cose più particolari) (questa proprietà ce l'hanno tutti gli elementi)
+
+            static = fa posizionare gli elementi in alto a sinistra nel primo spazio possibile
+
+            relative = fa spostare gli elementi (PARTENDO DA DOVE SI TROVA L'ELEMETNO) (FUNZIONA CON QUELLI SOTTO) (SI SOVRAPPONE AGLI ALTRI ELEMENTI, NON SPOSTA GLI ALTRI)
+            left =
+            top =
+            right =
+            bottom =
+            se usiamo left e right, vanno in conflitto
+            left e top vincono sempre su right e bottom
+
+            posso spostare sempre gli elementi sulla destra e sotto allarghiamo e allunghiamo la pagina
+            ma non possiamo allargarla a sinistra e sopra
+            E' sbagliato allargare la pagina verso destra
+
+            absolute = mettendo top = 0 prende come punti di riferimento sopra a tutto la pagina  (stare attentissimi, perchè puo rovinare il responsive) (di solito viene usato per cose particolarissime) (tipo quando devi mettere delle icone su qualcosa es sito aulab) (il padre deve per forza avere position relative)
+            left =
+            top =
+            right =
+            bottom =
+            se si trova all'interno di un elemento (il tag padre) con position relative, avrà come di riferimento il contenitore 
+            
+            fixed: fanno in modo che la navigation bar o altri elementi rimangono fissi nella pagina (ha sempre bisogno delle direzioni per capire dove ancorarsi) (trasforma gli elementi in inline block)
+            top 
+            left 
+            right
+            bottom
+            (questa si comporta come se fosse absolute, quindi non occupa spazio nell'html e le cose possono andare sotto) (qundi gli elementi che voglio mettere sotto, li potrei mettere con un margin top) 
+
+            sticky = simile a fixed, ma mantiene alcune caratteristiche di relative 
+            (uniamo due barre e le fissiamo durante la navigazione) (quando sta nel punto principale si comporta come tutti gli elementi) (si muove in base al contenitore in cui viene inserito) (cose più particolari)
+            top 
+            bottom
+            left
+            right
+
+            z-index = mi serve par far capire quale elemento si deve sovrappore sull'altro (FUNZIONA SOLO se la position di quell'elemento è diverso da static, QUINDI posso mettere tipo position-relative)
+                2 = per quella che si deve sovrapporre (i numeri sono indicativi, se ho più elementi posso usare più numeri)
+                1 = per quella che va sotto 
+
+            transition: (mi indica il tempo per fare la modifica di hover (guarda dopo))
+        
+    <!-- Pseudoclassi = servono quando cambio lo stato di un elemento (esempio menu a tendina) -->
+        
+        .classe:hover = quando mouse passa sopra cambia stato
+            qui posso deciere cosa cambiare
+            
+        :active :focus
+        sono più rare, indicano il cambiamento di stato, posso cambiare l'elemento 
+
+    
+    <!-- Mediaqueries =  che tipo di proprietà deve avere il css in base a dispositivo visualizzato (dal computer la scritta voglio vederla nera, dal cell rossa) (si mettono sempre in fondo, cosi sono sempre vincenti per il principio a cascata) (vedere live coding di Fabrizio)-->
+
+        @media screen and (grandezza dispositivo)
+        @media screen and (max-width: 500px) (tutto quello che succede qui deve succedere in uno schermo di massimo 500px)
+            p{
+                qui mettere il cambiamento che vuoi in quello schermo
+            }
+
+         @media screen and (min-width: 500px) (tutto quello che succede qui deve succedere in uno schermo di minimo 500px)
+            p{
+            qui mettere il cambiamento che vuoi in quello schermo
+            }
+
+    
+    <!-- Variabili = fai modifiche a tanti elementi insieme (di solito si mette sopra a tutto) -->
+
+            :root{
+                --clore_primario: red 
+                --colore_secondario: green
+            }
+
+            nei vari colori delle classi metto cosi si basano sompre sul :root 
+            p{
+                color: var(--colore_primario);
+            }
+
+    <!-- Pseudoelementi = strumento che ci permette di aggiungere elemento html senza senza inserirlo nell'html  -->
+
+            ::before
+            o 
+            ::after
+            
+            li::before{
+                content: "Elemento"
+            }
+            a tutti gli elementi li aggiungo la parola elemento davanti alla scritta di html (content è obbligatorio, anche se non gli voglio scrivere niente)
+            (più che altro serve perché delle volte è brutto aggiungere un elemento su html "inutile" e facciamo la modifica direttamente su css) 
+            OGNI ELEMENTO PUO'AVERE SOLO UN BEFORE O UN AFTER
+
+    <!-- Le animazioni -->
+    Si divide in due parti: creazione e assegnazione ad un elemento 
+
+        Queste proprietà spesso vengono usat eper le anmazioni ma possono essere usare anche atre volte
+
+        CREAZIONE 
+
+            transform =
+
+                rotate (va in gradi, deg) = ruota l'elemento 
+                
+                    rotateY = ruota su asse Y
+
+                    rotateX = ruota su asse X 
+
+                scale = ingrandisce l'elemento = si sovrappone alle parole
+
+                translate = muove un elemento verso destra e sinistra (serve soprattutto per creare animazioni)
+
+                skew = come se tirasse un'immagine verso diciamo noi (in gradi, deg), agisce sull'inclinzazone
+
+        
+        ASSEGNAZIONE
+        Come si assegna un'animazione?
+        Le animazioni partone tutte al caricamento della pagina 
+        Mettiamo animation come nella classe che vogliamo animare
+
+            animation = (si possono inserire diverse caratteristiche)
+
+                name = es. moveright
+
+                duration = quanti quanti secondi 
+
+                count = quante volte deve farlo
+
+                direction = verso dove deve andare
+
+                timing function = tipo entra velocemente e poi vai lentamente (si possono decidere diverse cose)
+
+            Usiamo @keyframes + nome animazione che abbiamo dato (esempio nostro moveright) per richiamarla e decidre cosa fargli fare
+
+                @keyframes moveright {
+                    from{
+                        transform: translateX (0)
+                    }
+                    to{
+                        transform: translateX(200px) 
+                    }
+                }
+            (in questo caso l'immagine si sposta da destra a sinistra)
+
+            Si puo fare anche cosi
+
+            @keyframes moveright {
+                0%{
+                    transform: translateX (0)
+                }
+                50%{
+                    transform: translateX(200px) 
+                }
+            }
+            (in questo caso posso far fare cose in diversi momenti, infatti potre anche tipo aggiungere 20%, 40% ecc.)
+
+                <!-- Shadow = ombra sul testi e su box-->
+                text-shadow 
+
+                box-shadow = 
+                es.
+                box-shadow: 10px 10px 10px (questo quanto deve esserere largo) 10px (quanto è forte il colore) + il colore;
+                
+                box-shadow: 10px 10px 10px 10px + il colore;
+                            -10px -10px 10px 10px + il colore;
+                Per mettere l'ombra su tutti i lati 
+                <!-- Blackdrop-filter= mi crea una patina sullo sfondo -->
+
+</div>
+
+<!-- BOOTSTRAP -->
+<div>
+    <!-- Definizione -->
+    Bootstrap è un framework (un sistema che ci semplifica lo sviluppo di un software, ci sono framework per ogni linguaggio)
+    Bootstrap è uno dei framework più importante grazie al Grid system
+    Praticamente con Botstrap, mettiamo direttamente la classe su html e fa modifiche senza scrivere niente su CSS 
+    Botstrap ha creato delle classi e le ha messe a disposizione di tutti
+    Boostrap usa dele parole chiave per le classi, per facilitarci il lavoro
+    Attenzione perché se ci sono dei problemi sul sito di Bootstrap, anche noi li abbiamo
+
+    <!-- Inserimento sul nostro progetto -->
+    Primo modo
+    1. Cerchiamo bootstrap su google (stare sempre attenti alla versione)   
+    2. Prendiamo il CDN (content delivery network) link: 
+        2.a Prendiamo il link di Bootstrap per CSS e lo copiamo su html (sotto tytle): 
+            <link rel="stylesheet" href="qui copiamo il link che sta su internet">
+            Però sotto mettiamo sempre quello che mettevamo prima (sotto per il sistema a cascata, il nostro deve sempre vincere)
+            <link rel="stylesheet" href="quello che mettevo prima">
+
+        2.b Prendiamo il link di Bootstrap per JS e lo copiamo su body
+            <script> src="link di JS che troviamo sul sito" </script>
+            (Appena mettiamo bootstrap ci cambia font e ci toglie gli spazi all'inizio)
+
+    Secondo modo
+    1. prendiamo la start template di botstrap 
+    2. aggiungiamo il nostro file.css
+    3. possiamo iniziare
+
+    <!-- Come funziona: -->
+    Cercare le classi su google e sul sito bootstrap
+    C'è sempre un - nelle classi di bootstrap
+    Partiamo da Utilities
+    
+    Esempio:
+    <h1 class="bg-black text-primary">aaaaa</h1>
+    bg background
+    text = colore riferito al testo 
+
+    Colore
+        il rosso è = danger
+        il blu è = primary
+    Sinistra e destra
+        sinistra = start
+        destra = end
+    Display è molto più semplice
+        d = display
+
+    Attenzione su molte classi di bootstrap c'è IMPORTANT e non ti permette di sovrascrivere quello che vuoi mettere tu su quello che mettono loro
+
+    <!-- Grid system -->
+
+    Sistema a griglia che ci permette di organizzare gli elementi nella nostra pagina 
+    Ci facilita molto il lavoro
+    Sistema a matriosca (uno va dentro l'altro):
+
+        .container (contenitore di riferimento, ha le stesse funziona del div ma ci mette dei margini a destra e sinistra in base allo spazio che ha, si adatta agli schermi, esempio cell zero margini)
+        o
+        .container-fluid (non mi mette gli spazi a fianco di base) 
+
+            .row (Le righe all'interno del contenitore, da a tutte gli elementi la proprietà flex e flex wrap cioè il fatto che va capo) 
+                (una row prima di andare a capo ha bisogno di 12 colonne/spazi)
+
+                .col (Ogni riga è divisa in 12 colonne/spazi, qui metteremo le cose che vogliamo organizzare)
+
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-4"></div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+
+    
+    Il totale è 12 spazi
+    Gli spazi mancanti li possiamo usare per fare i distanziamenti
+    Quindi magari posso utilizzare meno colonne/spazi tipo 3 3 3, e le altre 3 per fare i distanziamenti, justify content e margin 
+
+    Per adattare un immagine al contenitore dove si trova mettere classe w=100%
+    
+    <!-- Breakpoint = mediaquery (lo schermo di riferimento) -->
+    Bootstrap è un sistema "mobile first" prende in considerazione principalmente lo schermo mobile (Tutte le sue grandezze sono tarate prima per il cell e poi gli altri schermi)
+    Quindi di base lui parte dal cellulare e noi ci dobbiamo adattare al contrario, esempio:
+
+        <div class="d-lg-flex">
+            (qui tipo mettiamo 3 immagini)
+        </div>
+        Significa = con il cell è display block (immagini una sotto altra), ma quando lo schermo è grande (lg, large) il display diventa flex (immagini una vicino all'altra) 
+
+    La maggior parte si ottimizzano 2 grandezze = medium (tablet) e large (computer)
+
+    Non con tutto possiamo usare i breakpoint (se non possiamo usarli, usare la mediaquery) 
+
+        Altro esempio
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4"></div>
+                    <img  src="http ecc" alt="">
+                    <img  src="http ecc" alt="">
+                    <img  src="http ecc" alt="">
+            </div>
+        </div>
+        Significa:
+            col-12 = quando è sul cell occupa tutto i 12 spazi che abbiamo, quindi le immagini andranno a capo
+            col-lg-4 = ma quando lo schermo è grande occupano 4 spazi (immagini una vicino all'altra) 
+
+
+    <!-- I componenti di Botstrap -->
+    Blocchi di codice preimpostati per avere interfaccia predefinite
+
+        <!-- Navbar -->
+        Possiamo prendere pezzi di codice interi e prendiamo la nostra nav bar completa
+        Possiamo usare questa come base e poi fare qualche modifica
+        I componenti di Botstrap già sono responsive
+
+        toggle = alternare funzioni (tipo apro e chiudo)
+
+        data-bs = sono attributi che ha creato Botstrap 
+        data-bs-toggle = ci fa capire che il bottone si apre e si chiude
+        data-bs-target = è un'id (#) che ci collega a quello dopo
+
+        aria-controls = sono contenuti soprattutto per ipovedenti e per la SEO
+
+        form = è la barra finale search + il pulsante search 
+
+        me-auto = significa che mi spinge il mio menu verso sinistra
+        ms-auto = significa che mi spinge il mio menu verso destra 
+        mx-auto = significa che mi spinge il mio menu verso centro cn stessa distanza da sinistra e destra
+
+        La parte disabled di solito viene tolta
+
+        Per cambiare il colore delle scritte del menu posso andare tranquillamente su botstrap, ci sono opzioni proprio per questo
+
+        Per bloccare la navbar sopra possiamo usare questa classe di Botstrap:    
+        <nav class="fixed-top"></nav>
+
+        Per aumentare l'altezza della navbar:
+            se usiamo height, ci sposta tuttto
+            dobbiamo usare min-height = e si adatta bene
+
+        Per stabilire dove vanno le scritte del 
+
+        Per mettere alcune scritte a sinistra e altre a destra
+        Devi fare due <ul></ul> diverse perchè poi puoi modificarli tranquillamente in maniere indipendente
+
+        <!-- Card -->
+        Ci semplifica tantissimo la construzione delle Card
+        Usiamole se facciamo piccole modifiche a quella card, mentre se facciamo troppe modifiche non conviene usarle.
+
+        Stare molto attenti allo style in line che sta all'inizio della card! 
+
+        <!-- Carosello -->
+        Immagini, prodotti che scorrono
+
+        Quando usiamo più componenti di Botstrap dobbiamo stare attenti alle classi, perchè i nomi rimangono gli stessi e di cnseguenze i sistemi si rompono, non funzionano bene.
+
+        cambiare tipo il colore della freccetta dove giriamo le immagine è tipo un delirio, quindi conviene cancellare quella di bootstrap e metterci una nostra e 
+
+
+        <!-- Icone -->
+        Se voglio inserire delle icone di Botstrap nel nostro file dobbiamo inserire un altro CDN, cioè un altro link (preso su botstrap) sotto <head></head>
+
+        Le icone si comportano come testi, quindi possiamo tranuqillamente modificarla come testi 
+
+
+        <!-- Modali -->
+        E' qualcosa che scatta al verificarsi di un evento
+
+        Premi un pulsante e si apre una "sottopagina" chiamata modale
+
+        Può essere tranquillamente modificato
+
+        E' diviso in due parti:
+            La prima parte: cosa fa funazionare la modale (questo qui alla fine puo essere tranquillamente modificao, e mettere che un nostro bottone nella pagina ci permette di aprire la modale) 
+            La seconda parte: la modale in se per se 
+
+        I menu delle modali si mettono sempre alla fine della pagina 
+</div>
+    
+<!-- GIT E GITHUB -->
+<div>
+    <!-- Definizione e Storia -->
+
+    Fino al 2005 non c'era un sistema di condivisione del codice online
+    2005 nascita, creato da Linus Torvalds
+    Lui ha creato Git, ma non ha creato Git Hub
+
+    Sistema per salvataggio e condivisione del lavoro
+    Serve per tenere traccio del nostro lavoro, step by step
+    Il sistema più utilizzato al mondo
+    Ci permette di fare diverse cose: 
+        - Salvare il nostro codice online (cosi possiamo usarlo anche da altri dispositvi)
+        - Ci permette di tornare alle vecchie versioni (se esempio vogliamo cercare un bug, possiamo vedere se nelle altre versioni c'era già)
+        - Condividere il nostro codice con il nostro team online
+
+    Si divide in due fasi
+        - Fase locale sul nostro comp
+        - Fase gestione parte online
+
+        <!-- Prima fase: Locale -->
+
+        Possiamo creare tanti salvataggi diversi (conviene crearli solo quando facciamo modifiche importanti)
+        Git ha un sistema per creare ramificazioni all'interno delle nostre versioni, in modo da creare rami diversi su cui lavorare per sviluppare delle modifiche mentre si lavora sulla principale (esempio che ha fatto Fabrizio)
+
+        Git funziona tramite terminale, si trova già nella git bash
+        Tutti i comandi di git iniziano con git
+
+        Ogni volta che creiamo un progetto creiamo un file git (perchè se lo creiamo nella cartella principale dopo salviamo in git tutti i file all'interno)
+
+            <!-- Comandi -->
+
+            git init = creare collegamento con git 
+            (repository è la cartella dove si trova git) (uscira un Master) (lo usiamo solo la prima volta che vogliamo fare collegamento) (mettendo ls -a usciranno i comandi nascosti e vredmo .git) 
+
+            git status = mi da info sullo stato del progetto in quel momento (commit sono i salvataggi)
+
+            git log = mi fa vedere tutti i commit presenti in quel progetto 
+
+            git diff mi fa vedere tutte le modifiche che sono state fatte rispetto all'ultimo salvataggio che ho fatto 
+                - git diff = ti dice i cambiamenti in tutta la cartella
+                - git diff miofile = mi dice i cambiamenti nel miofile
+
+            Salvataggio(commit) = 2 fasi: Cosa vogliamo salvare e conferma del salvataggio
+                Prima fase:
+                    git add nomefile = per salvare solo nome file
+                    git add . = per salvare tutti i file all'interno della nostra cartella
+
+                Seconda fase:
+                    git commit -m "nome salvataggio"
+
+            Su Visual Studio Code può uscire M vicino file, significa che non sono state salvate in git
+
+
+        <!-- Seconda fase: Online -->
+
+        Github online = è tipo un dropbox per i codici 
+
+        Dare accesso al sito per entrare sul nostro comp (SSH keys):
+
+        1. Sito github 
+            1.1 Servono le Chiavi SSH keys (i permessi per entrare nel nostro comp) 
+                1.1.1 Andiamo nel terminale nella cartella iniziale e scriviamo: 
+                ssh-keygen
+                ls
+                cd .ssh (qui abbiamo bisogno della id_rsa.pub)
+                cat id_rssa.pub (abbiamo bisogno di vedere la ssh key)
+                copia e incolliamo la nostra ssh key su git hub online
+
+        Salvare le cose online:
+
+        Github
+            Ropositories
+                Create a new repository
+
+        Fai la configurazione iniziale e poi ai avanti:
+
+        Come funziona quando lavori in team
+            - Io mando online il mio progetto
+            - Un altro si prende il mio progetto, lo mette sul suo comp e gli aggiunge le sue modifiche e poi con le modifiche completa tutto e mette tutto online
+
+            <!-- Comandi -->
+
+            git push = per salvare i miei cambiamenti online
+            git pull = per prendere i cambiamenti online e metterli sul mio comp
+
+            possiamo fare git push e git pull  solo se lo stato del mio progetto è aggiornato all'ultima versione
+            con git push praticamente lui manda online i vari commit fatti del mio file
+
+            Siamo in 3 persone e lavoriamo su un singolo progetto:
+                - 1 di loro crea i vari file html e css e tutto e lo mette online
+                - Gli altri devono clonarsi i file sul proprio computer
+                - Per farlo vanno su Code e copiare ssh 
+                - In visul studio code puoi mettere ctrl J per aprire il terminale, cambiare solo powershell e stai apposto
+
+            Quando lavoriamo in gruppo, per andare a prendermi il file online di un'altra persona:
+                - vado su github
+                - vado sul file condiviso 
+                - vado su code in alto a destra e mi copio SSH
+                - vado sul mio terminale, nella cartella dve ho i miei progetti
+                - inserisco: git clone incollossh
+                - mi trovo la cartella online sul mio comp
+</div>
+
+<!-- PROGRAMMAZIONE -->
+<div>
+Flowchart = diagramma di flusso
+
+Algoritmo = istruzioni da seguire per affrontare un problema (es. preparare piatto di pasta)
+Tutti gli algoritmi hanno sempre un inizio ed una fine!! Al massimo possono avere una ripetizione infinita.
+
+Componenti flowchart:
+
+Inizio
+Blocco di azione
+Test / Condizione = 1 entrata e 2 uscite
+Input/output
+Fine
+
+3 strutture fondamentali che ci permettono di creare gli algoritmi: (Teorema Bohm-Jacopini)
+
+Sequenza
+Condizione
+Iterazione
+
+</div>
+
+<!-- JAVASCRIPT -->
+<div> 
+    <!-- Premessa - Definizione - Inserimento nel progetto -->
+    <div>
+    mdn = documentazione ufficiale javascript
+    <!-- Premessa: Tipi di linguaggio di programmazione -->
+    2 Tipi di Linguaggio:
+    - Linguaggi compilati
+        Cliccando sopra esegue codice dentro, leggendo tutto il codice, salta tutte le operazioni che si ripetono più volte, quindi quando incontra un codice uguale ad un altro, lui da direttamente la soluzione
+        I compilati se trovano un errore, si bloccano, deve essere tutto il file eseguibile e ti dice dove sta l'errore
+
+    - Linguaggi interpretati:
+        Vengono interpretati riga per riga
+        Legge una riga e la esegue, legge un'altra riga e la esegue, quindi esegue anche le ripetizioni
+        Gli interpretati eseguono fino a quando c'è l'errore, quindi le cose prima le 
+        esegue, quelle dopo no.
+        
+        Javascript fa parte degli interpretati, ma fa parte di un'altra categoria: 
+        Javascript compilato jut-in- time
+            Prende il buono da entrambi
+            Va avanti fino a che non trova un errore
+
+    <!-- Definizione -->
+    Linguaggio di programmazione, orientato sugli eventi. 
+    Viene utilizzato per front end e back end (noi vedremo solo front end)
+    E' stato creato per semplificare il linguaggio Java (linguaggio completamente diverso, il creatore l'ha creato per semplificare Java e lo ha chiamato Javascript per utilizzare anche la sua popolarità)
+    Javascript da dinamicità al nostro sito
+    Dinamicità:
+    - Reazione a quello che fa un utente
+    - Da anche la possibilità, dato un numero di elementi con delle informazioni, lui ci permette di creare altri elementi con le stesse proprietà (esempio card Amazon, non dobbiamo crearle tutte ma basta crearne una)
+
+    <!-- Come inserire Javascript nel nostro progetto -->
+    Ci sono 3 modi per inserire JS sul nostro file:
+        - Inline (meno comodo)
+        - Inserire <script></script> all'interno di <body></body> Metodo Embedded (lo useremo poco) questo per questioni di pulizia
+        - Creare nuovo file (main.js)
+            - Colleghiamo il file sul nostro html 
+            Nel body (lo mettiamo alla fine che è più comodo ed anche perché per esempio se js è pesante è meglio ce carica prima il sito bene e poi arriva dopo js): <script src="main.js"></script>
+    </div>    
+    <!-- SEQUENZA -->
+        <!-- Costanti -->
+        <div>
+            <!-- Regole per le costanti -->
+            - SONO sempre dei cassetti di memoria
+            - NON possono essere variati
+            
+            <!-- const -->
+            const nome = "Fabrizio"
+            nome = "Claudio" - 
+            Questo non si può fare, non puoi variare
+
+            Lo usiamo per informazioni che non cambieranno mai nel tempo
+            Non posso lasciare una costante senza valore
+            Solitamente vengono chiamate con nome completamente MAIUSCOLO
+
+            const nome = "Fabrizio" - Inizializzazione è quando creo una costante e gli assegno valore
+            Devono essere obbiligatoriamente inizializzate e non possono essere dichiarate
+        </div>
+        <!-- Variabili -->
+        <section>  
+            <!-- Premessa - let - Scope - Tipi di dato -->
+            let serve a creare le variabili
+            let firstname = "fabrizio" 
+            let ci permette di creare un cassetto di memoria dove ci metto delle cose che voglio salvare
+            
+            <!-- Regole per nomi delle variabili -->
+            (camel case = firstName)
+            - NON si può iniziare il nome di una variabile con un numero - let 1name
+            - SI possono mettere i numeri dopo - let name4
+            - NON si possono mettere spazi tra variabili - let first name = "Fabrizio"  
+            - NON si possono usare caratteri speciali tranne 2 ( $ e _ ) perché nella maggiot parte dei casi quei simboli stanno ad indicare qualcos altro - let % = 
+            - SI differenziano lettere maiuscole e minuscole (case sensitive)
+            - I nomi delle variabili DEVONO essere parlanti
+            - Le variabili possono essere dichiarate vuote =
+                let nome;
+                nome = "Fabrizio" 
+            
+            <!-- Scope -->
+            Visibilità di una variabile
+            Locale: è quando una variabile è disponibile solo in un determinato ambiente
+            Globale: è quando una variabile è accessibile in tutto il nostro folgio js 
+
+            <!-- let -->
+            let nome - Dichiarazione è quando creo una variabile senza assegnargli un valore
+            let nome = "Fabrizio" - Inizializzazione è quando creo una variabile e gli assegno direttamente un valore
+
+                <!-- console.log -->
+                console.log(nome) - serve per far comparire delle informazioni nella console quando metto ispeziona nel sitoweb
+                (stare attenti perché possono uscire delle informazioni sensibili e per questioni di sicurezza, qualche hacker potrebbe entrare nel nostro sito)
+
+                <!-- let e var -->
+                Nel 2015 c'è stato un grosso update
+                potremmo trovare al posto di let, var ( ma non dobbiamo usarla, si usava in passato)
+                La differenza più grande
+                var cognome 
+                var cognome
+                questa coSa è possibile, ma le cose scritte dopo sovrascrivono quelle prima e questo può essere un grande problema
+                let nome
+                let nome
+                questa cosa non è possibile, ci da errore
+
+            <!-- Tipi di dato  -->
+
+                <!-- Premessa - Tipizzazione: Debole e Forte -->
+                Ogni linguaggio ha una tipizzazione, 
+                
+                Forte: quando dobbiamo dichiarare il tipo di dato che andrà in quella specifica variabile
+
+                Debole: quando non dobbiamo dichiarare il tipo di dato che andrà in quella specifica variabile
+
+                Javascript = tipizzazione debole 
+
+                Java = forte (cioè all'interno di una variabile gli devo già dichiarare cosa posso mettere all'interno)
+
+            <!-- Tipi di dato: Teoria -->
+            Le informazioni che possiamo mettere nelle variabili
+            DUE MACROCATEGORIE
+
+                - PRIMITIVI
+                Sono dati SEMPLICI, IMMUTABILI, e LEGGERI
+                    - Number, String, Boolean, Null, Undefined, Symbol (Symbol non vedremo)
+            
+                - NON PRIMITIVI
+                Sono dati STRUTTURALI, MUTABILI e PESANTI
+                    - Object
+
+                let num = 10;
+                console.log(typeof num) 
+                <!-- Typeof --> serve per far vedere che tipo di dato abbiamo messo
+
+                <!-- Primitivi -->
+
+                    <!-- String -->
+                    Tutto ciò che è racchiuso tra apicetti
+                    Esistono tre tipi di apicetti 
+                        1) let string = "ciao"
+                        2) let string2 = 'ciao' fanno la stessa cosa, ma bisogna stare attenti quando faccio l'accento, quindi se ho un accento è meglio usare i doppi apicetti "", mentre se ho una citazione da mettere tra virgolette è meglio usare gli apicetti singoli
+                        let string3 = string + string2
+                        3) backtick (sulla tastiera ALT + 96) - string interpolation 
+                        console.log(`ciao ${string} come stai?`) = permette di mettere all'interno delle parentesi anche le variabili, perchè con gli altri apicetti non si può. Quindi per riconoscere una variabile all'interno  serve `${}`
+
+                        let num = 5;
+                        let num2 = "5"; il primo lo prende come numero, il secondo come stringa 
+
+                        <!-- Type coertion --> trasformare un tipo di dato in un altro  
+                        console.log(num + num2);
+                        + è concatenazione, quindi non trasforma i dati
+                        console.log(num - num2);
+
+                        Implicita o Esplicita
+
+                        - Implicita quando lo fa lui automaticamente
+                        - Esplicita quando sono io che lo forzo
+                            console.log(num + Number(num2));
+                            
+                    <!-- Number -->
+                            Sono tutti i numeri, positivi e negativi, non c'è distinzione tra numeri con la virgola e senza virgola, fa parte dei numeri anche NaN 
+                            
+                        <!-- Nan -->
+                        let num = 5;
+                        let num2 = "ciao"
+                        console.log(num-num2); = Nan (Not a number) - non è riuscito a fare l'operazione
+                        Nan = è un valore di tipo numerico, sono tutte quei numeri per cui non è ruscito a fare operazioni
+                        qualsiasi valore + - * Nan da sempre Nan
+
+                    <!-- Boolean -->
+                    Possono avere solo due valori: True o False
+
+                    let boolean = true
+                    let boolean = false 
+            
+                    Se dovessere trasformarsi in numero, false diventa 0, true diventa 1
+
+                    <!-- Undefined  -->
+                    Assenza di un valore (non è un errore)
+                    let a;
+                    console.log(a);
+
+                    <!-- Null -->
+                    Assenza di un identificativo relativo agli OBJECT 
+                    Lui si aspetta in quel punto di trovare un Object, ma non c'è
+                    Lo vediamo dopo quando vediamo gli object 
+                    Potremmo considerare Undefined per i PRIMITIVI, Null per gli Object 
+        </section>
+        <!-- Operatori-->
+        <section>
+        Si dividono in 3 categorie
+        - Operatori Unari (agiscono su un elemento)
+        - Operatori Binari (agiscono su due elementi)
+        - Operatori Ternari (agiscono su tre elementi)
+
+            <!-- Operatori Unari -->
+            - typeof
+            - operatore di incremento
+            - operatore di decremento
+
+            let numero = 1;
+            numero++; (operatore di incremento unario) (++ significa +1)
+            numero--, (operatore di decremento unario) (-- significa -1)
+
+            <!-- Operatori Binari -->
+            3 Categorie
+            - Operatori di confronto
+            - Operatori Matematici
+            - Operatori Logici
+
+                <!-- Operatori di confronto -->
+                Possono avere come risultato solo un booleano, o true o false 
+                let a = 2;
+                let b = 3;
+
+                console.log(a > b) - maggiore
+                console.log(a < b) - maggiore uguale
+                console.log(a >= b) - minore
+                console.log(a <= b)
+                console.log(a == b) operatore di uguaglianza - a è uguale a b? uguale deve essere messo == altrimenti con solo = l'operazione è diversa
+                console.log(a != b) operatore di uguaglianza - a è diverso da b?
+
+                == e != (per il type coertion anche se c'è una stringa, lo trasforma in numero )
+
+                console.log(a === b) stretta uguaglianza in cui viene considerato anche il tipo di dato
+                console.log(a !== b) stretta differenza in cui viene considerato anche il tipo di dato
+
+
+                <!-- Operatori Matematici -->
+                Addizione
+                let somma = 1 + 2;
+
+                Sottrazione
+                let subt = 2 - 1;
+
+                Moltiplicazione
+                let mult = 2 * 2;
+
+                Divisione 
+                let div = 2 / 2;
+
+                Potenza
+                let power = 2**2;
+
+                Modulo
+                let module = 5 % 2;
+                console.log(5 % 2); ci da il resto della divisione quindi 2x2 (+1) = 5
+                console.log(5 % 2 == 0) - false 
+                mentre se è pari è sempre zero perché non c'è resto
+
+
+                <!-- Operatori Logici -->
+                Sono due e servono per concatenare elementi diversi
+
+                    <!-- && (and and) -->
+                    serve per verificare entrambe le condizioni sono vere e ci da un valore
+                    <!-- || (or) -->
+                    serve per verificare se una delle condizioni è vera e ci da un valore
+
+                    Quando utilizzo questi operatori avrò come risultato un contesto booleando: Truthy (veritieri) o Falsy (non veritieri)
+
+                        <!-- Truthy -->
+                        Numeri positivi e negativi (tranne lo 0), tutte le stringhe (tranne la stringa vuota (non deve esserci nessuno spazio tra gli apicetti)), tutti gli object, ed il true booleano;
+                        <!-- Falsy -->
+                        Zero, Stringa vuota, null, undefined, NaN ed il false booleano;
+
+                    <!-- Utilizzo && -->
+                    Ci restituisce il primo valore falsy che trova tra i 2 o l'ultimo truthy in caso non trova valore falsy 
+                    
+                    <!-- Utilizzo ||  -->
+                    Ci restituisce il primo valore truthy che trova tra i 2 o l'ultimo falsy in caso non trova valori truthy
+
+                    console.log("ciao" && 10);
+
+                    <!-- IL COMPUTER FA SOLO 2 OPERAZIONI PER VOLTA -->
+
+                <!-- toFixed - per inserire i decimali che voglio -->
+            
+                Metodo che ci permette di togliere i numeri con la virgola
+                let num = 15.56 
+                console.log(num.toFixed(0)) 0 insierisco i decimali che voglio 
+                però il valore che esce è una stringa non un numero 
+
+        </section>
+        <!-- Oggetto Math -->
+        <section>
+        Ci servono per fare molte operazioni matematiche
+
+            <!-- Math.round() -->
+            Mi arrotonda al numero decimale + vicino
+            
+            let number = 15.6
+            let number2 = 15.4
+
+            console.log(Math.round(number)) - esce 16
+            console.log(Math.round(number)) - esce 15 
+            (qui stiamo solo stampando i valori, non stiamo ancora modificando)
+
+            let number = Math.round(15.6)
+
+            <!-- Math.floor() -->
+            Arrotonda sempre per difetto
+
+            let number = 15.6
+            let number2 = 15.4
+
+            console.log(Math.floor(number)) - esce 15
+            console.log(Math.floor(number)) - esce 15
+
+            <!-- Math.ceil -->
+            Arrotonda sempre per eccesso
+            
+            let number = 15.6
+            let number2 = 15.4
+
+            console.log(Math.ceil(number)) - esce 16
+            console.log(Math.ceil(number)) - esce 16
+
+            <!-- Math.random() -->
+            Esce sempre un numero casuale che va da 0 a 1, ma non sarà mai 0 e 1, tipo 0.324235 o 0.947298
+
+            console.log(Math.random()) - esce 0.7 (tutti numeri casuali)
+            console.log(Math.random()) - esce 0.8 (tutti numeri casuali)
+
+            console.log(Math.random() * (5 - 1) +1) = numero casuale tra 1 e 5 peò li mette con la virgola
+            5 è il numero massimo, 1 è il numero minimo, è proprio così la formula
+
+            Se vogliamo far uscire un numero senza virgola con il Math.random()
+            console.log(Math.round(Math.random() * (6 - 1) +1)) = numero casuale tra 1 e 5 senza virgola
+
+            <!-- Math.max() -->
+            Ci da il numero più grande tra diversi numeri (ACCETTA SOLO NUMERI)
+            console.log(Math.max(5, 10, -5, 50, 38)) - ci esce 50
+
+            <!-- Math.min() -->
+            Ci da il numero più piccolo tra diversi numeri (ACCETTA SOLO NUMERI)
+            console.log(Math.min(5, 10, -5, 50, 38)) - ci esce -5
+        </section>
+    
+    <!-- SELEZIONE O CONDIZIONE (if - if else - switch) -->    
+        <div>
+        Tre metodi per la Condizione
+
+        if / else
+        if / esle if / else 
+        switch
+
+        <!-- if / else  -->
+        serve per inserire una condizione
+
+            if(la condizione da verificare){
+                la cosa che deve succedere (solo se è verificata la condizione)
+            } else {
+                tutti gli altri casi
+            }
+
+            let anni = 17
+
+            if(anni >= 18){
+                console.log("Sei Maggiorenne")
+            }
+            In questo caso non esce niente perché la condizione non è verificata 
+
+            if(anni >= 18){
+                console.log("Sei Maggiorenne")
+            } else {
+                console.log("Sei Minorenne")
+            }
+            In questo caso esce "Sei Minorenne" perché la condizione non è verificata e in tutti gli altri casi esce "Sei Minorenne"
+
+            if riconosce i valori truthy e falsy
+
+        <!-- if / else if / else  -->
+        In questo caso abbiamo due condizioni
+
+            let anni = 17
+
+            if(anni >= 18){
+                console.log("Sei Maggiorenne")
+            } else if {
+                console.log("Sei Minorenne")
+            } else{
+
+            }
+
+            
+            Ricorda che va in ordine:
+
+            let anni = 25
+
+            if(anni > 20) {
+                console.log("Sei Maggiorenne")
+            } else if (anni > 22) { 
+                console.log("Sei Minorenne")
+            } else {
+
+            }
+
+            Qui entrerà nella prima if, perchè va in ordine
+
+        <!-- switch -->
+            Strumentod di condizione che verifica ciò che mettiamo nel switch 
+            Viene usato molto meno di if, viene usato quando c'è qualcosa di più specifico
+
+            let giorno = "lunedi";
+
+            switch (giorno){
+                case "lunedi": (questo verifica che "lunedi" è uguale a giorno)
+
+                    break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova, il break non è obbligatorio, io posso anche avere diversi case senza break, cosi per qualsiasi case fa la stessa cosa)
+
+                default (come se fosse else, se non entra in nessuno dei case va qui)
+            }
+            QUI SPIEGO QUELLO SOPRA
+            switch (a){
+                case "b": (questo verifica che "a" è uguale a b)
+
+                    break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova)
+
+                default (come se fosse else, se non entra in nessuno dei case va qui)
+            }
+        </div>
+
+    <!-- ITERAZIONI O CICLI (for - while - do while)-->
+    <div>
+        For (più usato)
+        While 
+        Do-while 
+
+        <!-- For -->
+        Lo utilizziamo quando sappiamo qual è il numero di volte che si deve ripetere un'operazione 
+
+        for(let i = 0; i < 10; i++ ){
+            qui dentro mettiamo qualcosa che si ripetono 10 volte
+        }
+        let i = 0 - inizializziamo quest variabile a 0
+        i < 10 = quanti giri deve fare
+        i++ = deve aggiungere sempre 1, deve aumentare se stesso di 1
+        (let i = 0; i < 10; i++ ) - questa struttura non deve essere cambiata
+
+        i esiste solo nel ciclo for, non la possiamo utilizzare esternamente
+        si può chiamare anche index 
+
+        let num = 30
+
+        for(let i = 0; i < num; i++ ){
+        }
+
+        <!-- while -->
+        fa un numero di giri finchè la condizione non è verificata 
+        Quando la condizione è vera mi fa di nuovo il giro!!
+
+        la condizione la ha all'inizio
+
+        while (condition) {
+
+        }
+        
+        let counter = 0
+        while (counter < 10) {
+
+        }
+
+        
+        while è la condizione per far ripetere il ciclo, quindi deve essere la risposta sbagliata, perché quando la risposta sarà corretta, il ciclo si fermerà
+        
+        Quello che scrivo dentro while è la condizione che mi fa fare ciclo
+        Quindi se scrivo while(a > 3), se io ho a = 4 lui fa il ciclo 
+
+        <!-- do-while -->
+        anche se la condizione non è verificata, almeno una volta prova a fare una verifica, cioè entra nel do  
+
+        Quando la condizione è vera mi fa di nuovo il giro!!
+
+        la condizione la ha alla fine
+
+        do{
+
+        } while (condition)
+
+        usiamo while, quando non deve essere fatto il ciclo almeno una volta
+
+        usiamo do-while, quando deve essere fatto il ciclo almeno una volta
+    </div>            
+    
+    <!-- Funzioni -->
+    <div>
+        <!-- Definizione -->
+        Le funzioni sono blocchi di codice che si ripetono
+        Posso scrivere un codice una volta e lo posso richiamarlo tantissime volte
+
+        Le funzioni possono avere diversi valori in entrata
+        Ma può esserci solo un valore di uscita!!
+        
+        function nomefunzione (parametriFormali) { 
+            il codice che vogliamo scrivere
+        }
+
+        parametriFormali = se abbiamo bisogno di prendere delle informazioni dall'esterno 
+        possiamo mettere anche più parametri, mettere le virgole
+        Le parentesi tonde sono obbligatore
+
+            <!-- User Function e Built-in Function -->
+
+            - User Function: sono le funzioni custom che creiamo noi sviluppatori
+            - Built-in function: tutte quelle funzioni integrate in JS (o altri linguaggi di programmazione) che ci mette a disposizione. (esempio Math) 
+
+            <!-- Scope -->
+            Tutte le variabili che vengono create nelle funzioni, esistono solo nelle funzioni, non le possiamo usare noi esternamente
+
+        <!-- Regole funzioni -->
+        La funzione è sempre creata in 2 fasi diverse: 
+        1) Creazione
+        2) Associazione a qualcosa
+
+            <!-- Creazione -->
+
+            function hello(){
+                console.log("Ciao a tutti")
+            }
+
+            <!-- Associazione  -->
+
+            hello();
+
+            <!-- Esempio -->
+
+            function printUsers(nome){
+                console.log(`Benvenuto ${nome}`)
+            }
+
+            printUsers("Ilaria")
+  
+        <!-- Return -->
+        Esiste una keyword per fa uscire una variabile da una funzione
+
+        return 
+        Serve per far uscire fuori dalla funzione quello che ci interessa della funzione (guarda esercizio che ha fatto Fabrizio)
+
+        ruturn non fa uscire la variabile, ma qello che c'è all'interno
+        quando una funzione incontra il return tutto ciò che viene dopo non viene letto
+
+        function name(num, num2) {
+            let somma = num + num2);
+            return somma;
+            (tutto quello che scrivo qui non viene letto)
+        }
+
+            <!-- Side Effect -->
+            Vale solo per le Funzioni
+            Quando faccio uscire qualcosa dalle funzioni senza farlo uscire con il Return                 
+        
+        
+    </div>
+    
+        <!-- Arrow Function: Divesi modi di scrivere una Funzione -->
+        <div>
+            
+            Vecchio metodo
+
+                function sommaDueNumeri(num1, num2){
+                    ruturn num1 + num2
+                }
+                let somma = sommaDueNumeri(5, 10)
+
+            Primo Nuovo metodo
+            
+                let sommaDueNumeri = function(num1, num2){
+                    ruturn num1 + num2
+                }
+                let somma = sommaDueNumeri(5, 10)
+
+            Secondo Nuovo metodo: <!--Arrow Function (ci snellisce il codice) -->
+
+                (ma viene usato solo in pochissimi casi, cioè quando ci sono pochi calcoli ( cioè il corpo della funzione è solo su una riga daa fare), se tipo dobbiamo mettere molte cose all'intenro, non farla)
+
+                let sommaDueNumeri = ((num1, num2) => num1 + num2)
+
+                => sostituisce function 
+
+                CI PERMETTE ANCHE DI NON SCRIVERE RETURN
+        </div>
+        
+        <!-- CALLBACK funzione come argomento di un'altra funzione-->
+        <div>
+        Quando passo una funzione come argomento di un'altra funzione, la funzione che sto passando si chiama Callback
+            
+        Esempio:
+        variabile.funzione((callback)=> )
+        </div>
+
+    <!-- Passaggio per Valore e Passaggio per Riferimento -->
+    <div>
+            <!-- Passaggio per valore (guarda video) -->
+            Quando facciamo una copia esatta di quel valore che rimarrà completamente slegata dal valore originale
+
+            <!-- Passaggio per Riferimento (video) -->
+            Quando creiamo un puntatore che fa riferimento allo stesso elemento da cui lo abbiamo preso
+            In Javascript i dati più complessi vengono modificati per riferimento e non per valore 
+    </div>
+
+    <!-- Array: Tipo di dato non primitivo-->
+    <main>
+        <!-- Premessa - Definizione - Regole - Esempio -->
+        <section>
+            <!-- Premessa -->
+            In javascript Array fa parte degli OBJECT
+            Un tipo particolare di oggetto: sono un tipo di dato non primitivo e quindi: mutabili, pesanti e strutturali.
+
+            <!--Definizione  -->
+            E' una lista ordinata di elementi il cui ordinamento è garantito da un indice che parte sempre da zero
+
+            <!-- Regole -->
+            si scrivno sempre tra parentesi quadre [], posso mettere qualsiasi tipo di dato
+            posso mettere anche un array dentro un altro array 
+
+            <!-- Esempio -->
+            let array = [1,2, "Ciao, undefined, true]
+            
+            l'indice serve per manipolare gli elementi del nostor elenco 
+
+            let array = [1,2, "Ciao, undefined, true]
+            console.log(array[3])
+            mi stamperà: undefined (indice parte sempre da 0)
+
+            Posso tranquillamente modificare gli elementi dell'array
+
+            length ci dice quanti elementi ci sono all'interno di array 
+        </section>
+
+        <!-- Metodo degli Array -->
+        <section>
+        Sono delle funzioni che sono associate a degli oggetti 
+        Tutti i metodi sono funzioni, ma non tutte le funzioni sono metodi 
+
+            <!-- .push() --> 
+                aggiunge uno o più elementi in coda all'array sul quale lo sto facendo 
+                array.push()
+
+            <!-- .unshift() --> 
+                agiunge un elemento in testa all'array sul quale lo sto utilizzando
+                array.unshift()
+
+            <!-- .pop() --> 
+                Taglia l'ultimo elemento dell'array e se lo associamo ad una variabile, ci salva quel valore tagliato all'intenro della variabile
+                array.pop()
+
+            <!-- .shift() --> 
+                Taglia il primo elemento dell'array e se lo associamo ad una variabile, ci salva quel valore tagliato all'intenro della variabile
+
+            <!-- .reverse() --> 
+                Ci inverte tutti gli indici dell'array 
+
+            <!-- .splice() -->  
+                Taglia in un punto specifico dell'array e se lo associamo ad una variabile, ci salva quel valore tagliato all'intenro della variabile, poi ci permette di aggiungere anche elementi 
+                .splice(dadovetagliare, quantielementitagliare, elementodaaggiungere, elementodaggiungere2) = 
+
+            <!-- .indexOf() --> = entra all'intrno di un array e ci trova la posizione di un elemento  
+                let arryNonSoComeChiamarti = ["mela", "pera", "arancia"] 
+                let index = arryNonSoComeChiamarti.indexOf("pera")
+                console.log(index)
+                ci dice la posizione dell'elemento pera  
+                se non trova l'elemento ci da -1
+
+            <!-- .toLowerCase() --> 
+                prende una stringa e la trasforma tutto in minuscolo
+        
+            <!-- .join -->
+                trasforma un array in una stringa
+            
+                let array2 = ["b", "ciao", "come", "va"]
+                let arrayToString = array2.join("")
+                  
+            <!-- .split -->
+                trasforma una stringa in un array
+                let array = frase.split("")  
+
+            <!-- .toString -->   
+                trasforma un numero in una stringa
+                let string = num.toString()
+                console.log(string.length);
+            <!-- SPREAD OPERATOR ... -> distrugge o costruisce un array in base al tipo di dato che stiamo utilizzano -->
+        </section>
+
+        <!-- Metodi di Ordine Superiore Degli Array -->
+        <section>
+        Sono quelle funzioni che accettano altre funzioni come parametri. 
+
+            <!-- .sort() --> 
+            Ci permette di ordinare gli elementi di un array secondo i nostri criteri 
+
+            
+            <!-- .reduce()  -->
+            Accetta un array in entrata e lo riduce ad un unico valore
+            
+                es
+                Voglio sommare tutti i numeri di questo array
+
+                let numbers = [1, 2, 3, 4, 5];
+
+                let sum = numbers.reduce( (accumulatore, numero)=> accumulatore + numero)
+                numero (sono tutti gli elementi dell'array)
+                somma mano mano tutti gli elementi, quindi fa 1 + 2, poi 3 + 3 poi 6+4 ecc
+
+                si può fare anche con la sottrazione (il classico utilizzo è  la somma)
+
+                Se Array vuoto, mi darà errore (per evitarlo guarda dopo)
+                
+                let numbers = [1, 2, 3, 4, 5];
+
+                let sum = numbers.reduce( (accumulatore, numero)=> accumulatore + numero, 100 )
+                in questo caso ho messo un valore di partenza che è 100
+                somma mano mano tutti gli elementi, quindi fa 100 + 1, poi 101 + 2 ecc 
+
+            <!-- .map()   -->
+            Crea un clone di un nostro array seguendo dei parametri che impostiamo noi
+
+                MI CREA UN NUOVO ARRAY CON LA STESSA LUNGHEZZA DELL'ARRAY ORIGINALE CON LE CONDIZIONI CHE GLI DICO IO
+
+                DEVE ESSERE SEMPRE ASSOCIATO AD UNA VARIABILE, PERCHE' STO CREANDO UN ALTRO ARRAY DIVERSO DAL PRIMO CON LE CONDIZIONI CHE HO DETTO IO 
+
+
+                let arr = [1, 2, 3, 4] 
+
+                let newArray = arr.map((num)=> num )
+                questo mi crea una copia identica del primo array 
+
+                let newArray = arr.map((num)=> num*2 )
+                questo mi crea una copia del primo array ma tutti gli elemtni vengono moltiplicati per 2 
+
+                Ma possiamo fare cose più complesse 
+
+                facciamo finta che vogliamo moltiplicare per 2 solo i numeri pari 
+
+                let newArray = arr.map((num)=> {
+                    if(num % 2 == 0){
+                        return num*2
+                    } else {
+                        return num
+                    }
+                })
+                             
+            <!-- .filter()  -->
+            Crea un clone dell'array filtrato secondo i nostri parametri 
+
+                SIMILE ALLA MAP 
+
+                PERO' CI FILTRA IL NUOVO ARRAY IN BASE AI PARAMTERI CHE DICIAMO NOI
+
+                QUINDI DIFFERENZA TRA MAP E FILTER:
+
+                MAP CREERA' SEMPRE UN ARRAY DELLA STESSA LUNGHEZZA DELL'ORIGINALE CON I NOSTRI PARAMETRI 
+
+                FILTER CREERA' UN NUOVO ARRAY CON GLI ELEMENTI CHE CI SERVONO SECONDO I NOSTRI PARAMETRI, QUINDI LA LUNGHEZZA PUO' ESSERE ANCHE DIVERSA DALL'ARRAY ORIGINALE 
+
+            
+                let arr = [1, 2, 3, 4, 5, 6]
+
+                let filtered = arr.filter( (el) => quiandràlacondizionechevogliamo )
+                fa sempre un ciclo di tutti gli elementi, quindi el è 1, poi 2, poi 3 ecc 
+
+                Facciamo che vogliamo solo i numeri pari
+
+                let filtered = arr.filter( (el) => el % 2 == 0)
+
+            <!-- .forEach()  -->
+            Cicla ogni elemento dell'array e ci permette di aggiungere un side effect ad ogni elemento. 
+
+                OPPOSTO DI MAP 
+                CIOE NON MI FA NESSUNA MODIFICA 
+
+                NON LO ASSOCEREMO MAI AD UNA VARIABILE PERCHE' NON CI RITORNA NIENTE, NON FA COME IL MAP CHE CI CREA UN ALTRO ARRAY
+            
+                PUO FARE LE MODIFICHE TRAMITE UN SIDE EFFECT, STA "FORZANDO LA MODIFICA"
+            
+                let arr = [1, 2, 3, 4, 5, 6]
+
+                esempio vogliamo stampare tutti i numeri 
+
+                arr.forEach( (el)=> console.log(el) )
+
+                Non sto modificando l'array, ma gli sto semplicemente dicendo, su ogni elemento dell'array fai qualcosa (ma non la modifica), in questo caso fai un console.log 
+
+
+                let array = [1, 2, 3, 4, 5, 6]
+
+                let array2 = []
+
+                arr.forEach( (el)=> 
+        </section>
+
+    </main>
+
+    <!-- Oggetti -->
+    <div>
+        <!-- Definizione -->
+        Sono un po' diversi dagli altri linguaggi di programmazione 
+        Rappresentazione astratta di un qualcosa
+        Gli oggetti e gli array vuoti hanno valore Truthy
+
+        Un oggetto è una collezione coppie CHIAVE - Valore
+        - La CHIAVE può essere una stringa (al 99%) o symbol 
+        - Il VALORE può essere qualsiasi tipo di dato
+            Il valore di un oggetto può anche essere una funzione in quel caso verrà chiamato METODO.
+
+            <!-- this = All'interno dell'oggetto al posto di scrivere nomeoggetto.chiave, potrei mettere this.valore (lo posso usare solo SE MI TROVO ALL'INTERNO ) -->
+
+        <!-- Come si scrive -->
+            let oggetto = {}
+            con le parentesi graffe
+
+            let smartphone = {
+                "marca": "Samsung",
+                "modello": "s24",
+                "prezzo": 1000,
+                "disponibilità": true;
+                "contatti": ["Fabrizio", "Fabio"]
+                "chiama": function(){
+                    console.log("Sto Chiamando.......")
+                }
+            }
+
+            "marca" = chiave
+            "Samsung" = valore
+
+        <!-- Stampare oggetto -->
+            console.log(smartphone)
+            usciranno tutti i dai
+
+            console.log(smartphone.marca)
+            uscirà solo Samsung
+
+        <!-- Modificare dati di una "chiave" -->
+            smartphone.prezzo = 999
+            o
+            smartphone["prezzo"] = 999
+
+            <!-- Se creo una copia e la modifico, cambia anche il primo (a meno che non faccio un clone) -->
+
+        <!-- Aggiungere una "chiave" -->
+            smartphone.schermo = "10 pollici"
+            se non esiste quella chiave all'intenro, creiamo schermo 
+
+        <!-- Modificare funzione  -->
+            smarphone.chiama()
+
+        <!-- Proviamo ad agire su Array all'interno di un Oggetto -->
+            <div>
+            <!-- Stampare tutti gli elementi della chiave "contatti" -->
+                let smartphone = {
+                    "marca": "Samsung",
+                    "modello": "s24",
+                    "prezzo": 1000,
+                    "disponibilità": true;
+                    "contatti": ["Fabrizio", "Fabio"]
+                    "chiama": function(){
+                        console.log("Sto Chiamando.......")
+                    }
+                    <!-- "mostraRubrica": function(){
+                        this.contatti.forEach( (contatto)=> console.log(contatto))
+                    } -->
+                }
+
+            <!-- Per aggiungere contatto -->
+                let smartphone = {
+                    "marca": "Samsung",
+                    "modello": "s24",
+                    "prezzo": 1000,
+                    "disponibilità": true;
+                    "contatti": ["Fabrizio", "Fabio"]
+                    "chiama": function(){
+                        console.log("Sto Chiamando.......")
+                    }
+                    "mostraRubrica": function(){
+                        this.contatti.forEach( (contatto)=> console.log(contatto))
+                    }
+                    <!-- "aggiungereContatto": function(nome){
+                        this.contatti.push(nome)
+                    } -->
+                }
+                smartphone.aggiungereContatto("Michele")
+
+            <!-- Per cancellare contatto -->
+                let smartphone = {
+                    "marca": "Samsung",
+                    "modello": "s24",
+                    "prezzo": 1000,
+                    "disponibilità": true;
+                    "contatti": ["Fabrizio", "Fabio"]
+                    "chiama": function(){
+                        console.log("Sto Chiamando.......")
+                    }
+                    "mostraRubrica": function(){
+                        this.contatti.forEach( (contatto)=> console.log(contatto))
+                    }
+                    "aggiungereContatto": function(nome){
+                        this.contatti.push(nome)
+                    }
+                    <!-- "cancellaContatto": function(nome){
+                        let index = this.contatti.indexOf(nome)
+                        if(index < -1) {
+                            this.contatti.splice(index, 1)
+                        } else{
+                            console.log("Contatto non trovato")
+                        } -->
+                    }
+                smartphone.cancellaContatto("Michele")
+                    
+            <!-- Per modificare contatto -->
+                let smartphone = {
+                    "marca": "Samsung",
+                    "modello": "s24",
+                    "prezzo": 1000,
+                    "disponibilità": true;
+                    "contatti": ["Fabrizio", "Fabio"]
+                    "chiama": function(){
+                        console.log("Sto Chiamando.......")
+                    }
+                    "mostraRubrica": function(){
+                        this.contatti.forEach( (contatto)=> console.log(contatto))
+                    }
+                    "aggiungereContatto": function(nome){
+                        this.contatti.push(nome)
+                    }
+                    "cancellaContatto": function(nome){
+                        let index = this.contatti.indexOf(nome)
+                        this.contatti.splice(index, 1)
+                    }
+                    <!-- "modificaContatto": function(nome, nomeModificato ){
+                        let index = this.contatti.indexOf(nome)
+                        this.contatti.splice(index, 1)
+                    } -->
+                }
+            </div>
+    </div>          
+                
+</div>
+
+
+       
+
+
