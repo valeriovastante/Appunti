@@ -208,18 +208,23 @@
 
 <!-- CSS -->
 <div>
-PREMESSA
-Avremo sempre un file index.html e un file style.css    
+
+    <!-- Definizione - Inserimento -->
+    <div>
+    Avremo sempre un file index.html e un file style.css    
     <!-- Definizione -->
-    Acronimo: (leggi su internet) a cascata
+        Acronimo: (leggi su internet) a cascata
         Linguaggio che ci permette di fare tantecose, colori + ridimensionamento e posizionamento, animazioni
         Ci permette di frae il sito responsive, molti partono direttamente dal cell e poi 
         DOBBIAMO SEMPRE AVERE UN FILE index.html di riferimento
 
         Ci sono diversi modi per risolvere un problema
 
-    <!-- Scorciatoia -->
-    div.box mi fa uscire direttamente class box
+        <!-- Principio Dry = Don't repeat yourself -->
+        Dobbiamo cercare di non replicare sempre le stesse cose
+
+        <!-- Scorciatoia -->
+        div.box mi fa uscire direttamente class box
 
     <!-- Come inserire CSS nel nostro documento: 3 modi -->   
 
@@ -236,10 +241,17 @@ Avremo sempre un file index.html e un file style.css
                 <link rel="stylesheet" href="quiilpercorsoperarrivarealnostrofilecss">
                 (posso mettere anche più folgi css, e vince sempre quello sotto)
 
-    <!-- Principio Dry = Don't repeat yourself -->
-    Dobbiamo cercare di non replicare sempre le stesse cose
+        <!-- Chi vince su chi -->
+        !important messo su .css vince su tutti quanti
+        style in line vince su tutti gli altri (il primo metodo, ma non usarlo mai)
+        id vince sulla classe
+        la classe vince sul quello per tag
+        quello per tag vince su quello generale
+        (un codice scritto bene non ha nessun !important, altrimenti dovresti sempre sovrascrivere su quello)
+    </div>
 
     <!-- Selettori: ci servono a selezionare solo alcune cose -->
+    <div>
     cerchiamo sempre di utilizzare nomi che ci trasmettono qualcosa
     in css chi è più in basso, vince contro più in alto (principio a cascata)
 
@@ -289,149 +301,175 @@ Avremo sempre un file index.html e un file style.css
         .quinome{
             color: red;
         }
+    </div>
+        <!-- Principio Specificità: Più un selettore è specifico più andrà a vincere su altri elementi-->    
 
-    <!-- Principio Specificità -->
-    Più un selettore è specifico più andrà a vincere su altri elementi
+    <!-- Proprietà CSS -->
+    <div>
+        <!-- Premessa -->
+        Alcune proprietà vengono ereditate da quelle che si trovano all'interno
+        Molti elementi hanno delle proprietà di base
+        Se non c'è nessun contenuto (es <div></div>) del css non prende niente (altezza è zero, quindi se vogliamo far vedere modifiche css dobbiamo mettere almeno l'altezza in css)
+        Utilizziamo sempre background perchè ci fa capire lo spazio che occupa un elemento
 
-    <!-- Chi vince su chi -->
-    !important messo su .css vince su tutti quanti
-    style in line vince su tutti gli altri (il primo metodo, ma non usarlo mai)
-    id vince sulla classe
-    la classe vince sul quello per tag
-    quello per tag vince su quello generale
-    (un codice scritto bene non ha nessun !important, altrimenti dovresti sempre sovrascrivere su quello)
-
-    <!-- Alcune proprietà vengono ereditate da quelle che si trovano all'interno -->
-
-    <!-- Alcune Proprietà CSS -->
-
-        Colore: quattro modi per scegliere colore
-        color: 
-            1 scegli dalla palette
-            2 rgb: utilizzare i numeri specifici per quel colore
-            3 rgba:posso decidere anche la trasparenza (c'è una barra a destra)
-            4 esa decimale: #54576
+        <!-- Colore  -->
+            quattro modi per scegliere colore
+            color: 
+                1 scegli dalla palette
+                2 rgb: utilizzare i numeri specifici per quel colore
+                3 rgba:posso decidere anche la trasparenza (c'è una barra a destra)
+                4 esa decimale: #54576
         
-        backgorund-color
+        <!-- backgorund-color -->
 
-        background-image: url(); o prendo immagine online, o prendo immagine della cartella
+        <!-- background-image -->
+            url(); o prendo immagine online, o prendo immagine della cartella
             qui posso usare 
 
-        background (url () = per aggiungere la foto) = anche questo posso usarlo per mettere immagini e modificare il background (posso sovrapporre anche più foto, quella che metto per prima andrà sopra le altre)
-            linear-gradient = (2 colori) parte dal primo colore e lo sfuma verso il secondo colore (può essere usato solo sul background) (possiamo usare CSS gradiente (google) per fare l'effetto)
+        <!-- background  -->
+            url () = per aggiungere la foto
+            anche questo posso usarlo per mettere immagini e modificare il background (posso sovrapporre anche più foto, quella che metto per prima andrà sopra le altre)
+                linear-gradient = (2 colori) parte dal primo colore e lo sfuma verso il secondo colore (può essere usato solo sul background) (possiamo usare CSS gradiente (google) per fare l'effetto)
 
-        background-position 
+        <!-- background-position  -->
             posizione 
 
-        background-size: 
+        <!-- background-size:  -->
             cover = si adatta allo schermo, anche se la rovina
             contain = cerca di lasciarmi la immagine nelle sue dimensioni adattandosi all'altezzza
             
-        Altezza (la maggior parte dei problemi è sulle altezze e non sulle larghezze)
-        height: stabilisce l'altezza del colore 
-            1 in pixel, 500px
-            2 percentuale: per il sito web l'altezza è infinita, quindi la pecentuale non funziona; però se il tag si trova all'interno ad un altro tag, la percentuale si può mettere perché si riferisce allo spazio del tag padre 
-            3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vh (di solito si usa per l'header iniziale), se scrivo troppo il testo puo uscire fuori
+        <!-- Altezza  -->
+        la maggior parte dei problemi è sulle altezze e non sulle larghezze
+            height
+                
+                stabilisce l'altezza del colore 
+                    1 in pixel, 500px
+                    2 percentuale: per il sito web l'altezza è infinita, quindi la pecentuale non funziona; però se il tag si trova all'interno ad un altro tag, la percentuale si può mettere perché si riferisce allo spazio del tag padre 
+                    3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vh (di solito si usa per l'header iniziale), se scrivo troppo il testo puo uscire fuori
 
-        min-height: si adatta in base a quanto scriviamo, cosi il testo non esce fuori: dipende molto da situazione a situazione
+            min-height
+                si adatta in base a quanto scriviamo, cosi il testo non esce fuori: dipende molto da situazione a situazione
 
-        Larghezza
-        width:stabilisce la larghezza del colore
-            1 in pixel
-            2 percentuale: 50%
-            3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vw (molto più raro) 
+        <!-- Larghezza -->
+            width:stabilisce la larghezza del colore
+                1 in pixel
+                2 percentuale: 50%
+                3 viewport: prende di riferimento la larghezza dello schermo utilizzato: 100vw (molto più raro) 
+            
+            min-width
         
-        min-width
-        
-        text-align: dove si posiziona il testo
-            center, left, right, end
-            justify = giustificare testo
+        <!-- text-align -->
+            dove si posiziona il testo
+                center, left, right, end
+                justify = giustificare testo
 
-        front-size: grandezza del testo
-            o unità di msura proposta da VSC
-            o mettere pixel: 70px
+        <!-- front-size -->
+            grandezza del testo
+                o unità di msura proposta da VSC
+                o mettere pixel: 70px
 
-        font-weight: quanto deve essere spessa la scritta
+        <!-- font-weight -->
+            quanto deve essere spessa la scritta
 
-        font-family: che tipo di font vogliamo usare
-            possiamo anche metterle io esternamente (non è stato spiegato)
+        <!-- font-family -->
+            che tipo di font vogliamo usare
+                possiamo anche metterle io esternamente (non è stato spiegato)
 
-        box model: esiste per tutti gli elementi (esempio bottone)
-            contenuto
-            padding: 
-            border:
-                grandezza tipologia colore
-                es 2px solid red (solid fa creare dei box)
-            border-radius: serve per smussare gli angoli, o dare una forma diversa agli elementi
-            margin: spazio esterno (SERVE SOLO PER CREARE UN PO' DI SPAZIO TRA UN ELEMENTO ED UN ALTRO, NON SERVE PER POSIZIONARE GLI ELMENTI IN UNA PAGINA)
+        <!-- box model -->
+            esiste per tutti gli elementi (esempio bottone)
+                contenuto
+                padding: 
+                border:
+                    grandezza tipologia colore
+                    es 2px solid red (solid fa creare dei box)
+                border-radius: serve per smussare gli angoli, o dare una forma diversa agli elementi
+                margin: spazio esterno (SERVE SOLO PER CREARE UN PO' DI SPAZIO TRA UN ELEMENTO ED UN ALTRO, NON SERVE PER POSIZIONARE GLI ELMENTI IN UNA PAGINA)
 
-        text-decoration: (deve andare nel tag <a href=""></a> )
-            none: per eliminare le sottolineature
+        <!-- text-decoration -->
+            deve andare nel tag <a href=""></a>
+                none: per eliminare le sottolineature
 
-        list-style-type: (deve andare nel tag <ul></ul> )
+        <!-- list-style-type -->
+            (deve andare nel tag <ul></ul> )
             none: toglie pallini nella lista 
+
+        <!-- Shadow = ombra sul testi e su box-->
+            text-shadow 
+
+            box-shadow = 
+            es.
+            box-shadow: 10px 10px 10px (questo quanto deve esserere largo) 10px (quanto è forte il colore) + il colore;
+            
+            box-shadow: 10px 10px 10px 10px + il colore;
+                        -10px -10px 10px 10px + il colore;
+            Per mettere l'ombra su tutti i lati 
+        
+        <!-- Blackdrop-filter= mi crea una patina sullo sfondo -->
 
 
         tutti questi valori possono essere modificati tramite css 
         in generale se metto 1 valore, è un quadrato, se  metto 2 valori è altezza e larghezza ecc.
 
-    <!-- Info utili -->
-    Molti elementi hanno delle proprietà di base
-    Se non c'è nessun contenuto (es <div></div>) del css non prende niente (altezza è zero, quindi se vogliamo far vedere modifiche css dobbiamo mettere almeno l'altezza in css)
-    Utilizziamo sempre background perchè ci fa capire lo spazio che occupa un elemento
+    </div>
     
-    <!-- Proprietà per posizionare e allineare elementi -->
+        <!-- Proprietà per posizionare e allineare elementi -->
+        <div>
+            <!-- display  -->
+                block = occupa tutta la riga (alcuni ce l'hanno di default) (qui posso modificare larghezza e altezza) (con margin possono spostarsi orizzontalmente e verticalmente)
 
-        display = 
-            block = occupa tutta la riga (alcuni ce l'hanno di default) (qui posso modificare larghezza e altezza) (con margin possono spostarsi orizzontalmente e verticalmente)
+                inline = occupa solo il suo spazio (inline non possono modificare larghezza e altezza) (con margin possono spostarsi solo orizzontalmente e non verticalmente)
 
-            inline = occupa solo il suo spazio (inline non possono modificare larghezza e altezza) (con margin possono spostarsi solo orizzontalmente e non verticalmente)
+                inline-block = prende le carittiristiche migliori di quello sopra (quindi qui per esempio posso modificare larghezza e altezza) (con margin posso sposarmi orizzontalmente e verticalmente) (gli elemtni con inline-block possono andare uno accanto all'altro)
 
-            inline-block = prende le carittiristiche migliori di quello sopra (quindi qui per esempio posso modificare larghezza e altezza) (con margin posso sposarmi orizzontalmente e verticalmente) (gli elemtni con inline-block possono andare uno accanto all'altro)
+                    Button = ha già la caratteristica inline-block 
 
-                Button = ha già la caratteristica inline-block 
+                none = non fa mostrare l'elemento (fa scomparire l'elemento) (tipo con i menu tendina, che fa scomparire e comparire il menu)
 
-            none = non fa mostrare l'elemento (fa scomparire l'elemento) (tipo con i menu tendina, che fa scomparire e comparire il menu)
-
-            flex = assegna l'inline block a tutti i figli di quell'elemento, quindi tutto va di fianco (SOLO I TAG FIGLI DIRETTI diventeranno inline-block)  
-            Es.
-            <div>
-                <h2>
-                    <p></p>
-                </h2>
-            </div>
-            
-        justify-content = serve ad allineare gli elementi su asse x (saranno sempre al centro della schermata, in tutte le schermate)
-        (FUNZIONA SOLO CON DISPLAY: FLEX)
-            
-            center = mette al centro
-            
-            space-between = creare anche il massimo spazio tra di loro (in base allo spazio che ha a disposizione, in base al contenitore dove si trovano)   Iqui qui quiI
-
-            space-around = prende anche lo spazio all'inizio e alla fine del primo e terzo elemento     (quelli in mezzo di spazi sono il doppio di quelli laterali)  I qui  qui  qui I
-
-            space-evenly= prende lo spazio all'inizio e alla fine, tutti gli spazi uguali I  qui  qui  qui  I
-
-        align-items = posizioniamo gli elmenti sull' asse y  
-        (FUNZIONA SOLO CON DISPLAY: FLEX)
-            
-            baseline = sopra
-            center = centro
-            end = alla fine
-
-        flex-wrap = fa andare a capo gli elementi 
-            
-            nowrap = non va capo
-            wrap = va a capo
-
-        flex-direction = serve a disporre gli elemti in verticale e orizzontale
-        (QUANDO USIAMO FLEX DIRECTION ASSE X E ASSE Y SI INVERTONO)
-
-            row = permette di posizionare gli elementi uno accanto all'altro
-            column = permette metterli in colonna
+                flex = assegna l'inline block a tutti i figli di quell'elemento, quindi tutto va di fianco (SOLO I TAG FIGLI DIRETTI diventeranno inline-block)  
+                Es.
+                <div>
+                    <h2>
+                        <p></p>
+                    </h2>
+                </div>
                 
-        <!-- Altro modo per muovere gli elementi -->
+            <!-- justify-content  -->
+            serve ad allineare gli elementi su asse x (saranno sempre al centro della schermata, in tutte le schermate)
+            (FUNZIONA SOLO CON DISPLAY: FLEX)
+                
+                center = mette al centro
+                
+                space-between = creare anche il massimo spazio tra di loro (in base allo spazio che ha a disposizione, in base al contenitore dove si trovano)   Iqui qui quiI
 
+                space-around = prende anche lo spazio all'inizio e alla fine del primo e terzo elemento     (quelli in mezzo di spazi sono il doppio di quelli laterali)  I qui  qui  qui I
+
+                space-evenly= prende lo spazio all'inizio e alla fine, tutti gli spazi uguali I  qui  qui  qui  I
+
+            <!-- align-items -->
+            posizioniamo gli elmenti sull' asse y  
+            (FUNZIONA SOLO CON DISPLAY: FLEX)
+                
+                baseline = sopra
+                center = centro
+                end = alla fine
+
+            <!-- flex-wrap -->
+            fa andare a capo gli elementi 
+                
+                nowrap = non va capo
+                wrap = va a capo
+
+            <!-- flex-direction -->
+            serve a disporre gli elemti in verticale e orizzontale
+            (QUANDO USIAMO FLEX DIRECTION ASSE X E ASSE Y SI INVERTONO)
+
+                row = permette di posizionare gli elementi uno accanto all'altro
+                column = permette metterli in colonna
+            
+        </div>
+
+        <!-- Position: Altro modo per muovere gli elementi -->
+        <div>
         position = sposta gli elementi (SPOSTA SOLO QUELL'ELEMENTO) (lo usiamo per fare cose più particolari) (questa proprietà ce l'hanno tutti gli elementi)
 
             static = fa posizionare gli elementi in alto a sinistra nel primo spazio possibile
@@ -474,18 +512,20 @@ Avremo sempre un file index.html e un file style.css
                 1 = per quella che va sotto 
 
             transition: (mi indica il tempo per fare la modifica di hover (guarda dopo))
-        
+        </div>
+    
+    <!-- Pseudoclassi - Mediaquerie - Variabili - Pseudoelementi -->
+    <div>
+
     <!-- Pseudoclassi = servono quando cambio lo stato di un elemento (esempio menu a tendina) -->
-        
         .classe:hover = quando mouse passa sopra cambia stato
             qui posso deciere cosa cambiare
             
         :active :focus
         sono più rare, indicano il cambiamento di stato, posso cambiare l'elemento 
-
+    
     
     <!-- Mediaqueries =  che tipo di proprietà deve avere il css in base a dispositivo visualizzato (dal computer la scritta voglio vederla nera, dal cell rossa) (si mettono sempre in fondo, cosi sono sempre vincenti per il principio a cascata) (vedere live coding di Fabrizio)-->
-
         @media screen and (grandezza dispositivo)
         @media screen and (max-width: 500px) (tutto quello che succede qui deve succedere in uno schermo di massimo 500px)
             p{
@@ -496,10 +536,9 @@ Avremo sempre un file index.html e un file style.css
             p{
             qui mettere il cambiamento che vuoi in quello schermo
             }
-
+    
     
     <!-- Variabili = fai modifiche a tanti elementi insieme (di solito si mette sopra a tutto) -->
-
             :root{
                 --clore_primario: red 
                 --colore_secondario: green
@@ -509,9 +548,10 @@ Avremo sempre un file index.html e un file style.css
             p{
                 color: var(--colore_primario);
             }
+    
 
     <!-- Pseudoelementi = strumento che ci permette di aggiungere elemento html senza senza inserirlo nell'html  -->
-
+    <div></div>
             ::before
             o 
             ::after
@@ -522,9 +562,11 @@ Avremo sempre un file index.html e un file style.css
             a tutti gli elementi li aggiungo la parola elemento davanti alla scritta di html (content è obbligatorio, anche se non gli voglio scrivere niente)
             (più che altro serve perché delle volte è brutto aggiungere un elemento su html "inutile" e facciamo la modifica direttamente su css) 
             OGNI ELEMENTO PUO'AVERE SOLO UN BEFORE O UN AFTER
+    </div>
 
-    <!-- Le animazioni -->
-    Si divide in due parti: creazione e assegnazione ad un elemento 
+    <!-- Animazioni -->
+    <div>
+        Si divide in due parti: creazione e assegnazione ad un elemento 
 
         Queste proprietà spesso vengono usat eper le anmazioni ma possono essere usare anche atre volte
 
@@ -586,22 +628,16 @@ Avremo sempre un file index.html e un file style.css
             }
             (in questo caso posso far fare cose in diversi momenti, infatti potre anche tipo aggiungere 20%, 40% ecc.)
 
-                <!-- Shadow = ombra sul testi e su box-->
-                text-shadow 
-
-                box-shadow = 
-                es.
-                box-shadow: 10px 10px 10px (questo quanto deve esserere largo) 10px (quanto è forte il colore) + il colore;
                 
-                box-shadow: 10px 10px 10px 10px + il colore;
-                            -10px -10px 10px 10px + il colore;
-                Per mettere l'ombra su tutti i lati 
-                <!-- Blackdrop-filter= mi crea una patina sullo sfondo -->
+    </div>
 
 </div>
 
 <!-- BOOTSTRAP -->
 <div>
+
+    <!-- Definizione - Inserimento - Funzionamento -->
+    <div>
     <!-- Definizione -->
     Bootstrap è un framework (un sistema che ci semplifica lo sviluppo di un software, ci sono framework per ogni linguaggio)
     Bootstrap è uno dei framework più importante grazie al Grid system
@@ -648,9 +684,11 @@ Avremo sempre un file index.html e un file style.css
         d = display
 
     Attenzione su molte classi di bootstrap c'è IMPORTANT e non ti permette di sovrascrivere quello che vuoi mettere tu su quello che mettono loro
+    </div>
 
+    <!-- Grid system - Breakpoint(schermo riferimento) -->
+    <div>
     <!-- Grid system -->
-
     Sistema a griglia che ci permette di organizzare gli elementi nella nostra pagina 
     Ci facilita molto il lavoro
     Sistema a matriosca (uno va dentro l'altro):
@@ -711,9 +749,10 @@ Avremo sempre un file index.html e un file style.css
         Significa:
             col-12 = quando è sul cell occupa tutto i 12 spazi che abbiamo, quindi le immagini andranno a capo
             col-lg-4 = ma quando lo schermo è grande occupano 4 spazi (immagini una vicino all'altra) 
+    </div>
 
-
-    <!-- I componenti di Botstrap -->
+    <!-- I componenti di Bootstrap -->
+    <div>
     Blocchi di codice preimpostati per avere interfaccia predefinite
 
         <!-- Navbar -->
@@ -783,6 +822,8 @@ Avremo sempre un file index.html e un file style.css
             La seconda parte: la modale in se per se 
 
         I menu delle modali si mettono sempre alla fine della pagina 
+    </div>
+
 </div>
     
 <!-- GIT E GITHUB -->
@@ -1491,7 +1532,7 @@ Iterazione
                 CI PERMETTE ANCHE DI NON SCRIVERE RETURN
         </div>
         
-        <!-- CALLBACK funzione come argomento di un'altra funzione-->
+        <!-- Callback: funzione come argomento di un'altra funzione-->
         <div>
         Quando passo una funzione come argomento di un'altra funzione, la funzione che sto passando si chiama Callback
             
@@ -1701,7 +1742,7 @@ Iterazione
 
     </main>
 
-    <!-- Oggetti -->
+    <!-- Oggetti: Tipo di dato non primitivo -->
     <div>
         <!-- Definizione -->
         Sono un po' diversi dagli altri linguaggi di programmazione 
