@@ -468,48 +468,53 @@
             
         </div>
 
-        <!-- Position: Altro modo per muovere gli elementi -->
+        <!-- Position: Altro modo per muovere gli elementi + Transition-->
         <div>
         position = sposta gli elementi (SPOSTA SOLO QUELL'ELEMENTO) (lo usiamo per fare cose più particolari) (questa proprietà ce l'hanno tutti gli elementi)
 
             static = fa posizionare gli elementi in alto a sinistra nel primo spazio possibile
 
-            relative = fa spostare gli elementi (PARTENDO DA DOVE SI TROVA L'ELEMETNO) (FUNZIONA CON QUELLI SOTTO) (SI SOVRAPPONE AGLI ALTRI ELEMENTI, NON SPOSTA GLI ALTRI)
-            left =
-            top =
-            right =
-            bottom =
-            se usiamo left e right, vanno in conflitto
-            left e top vincono sempre su right e bottom
+            relative = 
+                fa spostare gli elementi (PARTENDO DA DOVE SI TROVA L'ELEMETNO) (FUNZIONA CON QUELLI SOTTO) (SI SOVRAPPONE AGLI ALTRI ELEMENTI, NON SPOSTA GLI ALTRI)
+                left =
+                top =
+                right =
+                bottom =
+                se usiamo left e right, vanno in conflitto
+                left e top vincono sempre su right e bottom
 
-            posso spostare sempre gli elementi sulla destra e sotto allarghiamo e allunghiamo la pagina
-            ma non possiamo allargarla a sinistra e sopra
-            E' sbagliato allargare la pagina verso destra
+                posso spostare sempre gli elementi sulla destra e sotto allarghiamo e allunghiamo la pagina
+                ma non possiamo allargarla a sinistra e sopra
+                E' sbagliato allargare la pagina verso destra
 
-            absolute = mettendo top = 0 prende come punti di riferimento sopra a tutto la pagina  (stare attentissimi, perchè puo rovinare il responsive) (di solito viene usato per cose particolarissime) (tipo quando devi mettere delle icone su qualcosa es sito aulab) (il padre deve per forza avere position relative)
-            left =
-            top =
-            right =
-            bottom =
-            se si trova all'interno di un elemento (il tag padre) con position relative, avrà come di riferimento il contenitore 
-            
-            fixed: fanno in modo che la navigation bar o altri elementi rimangono fissi nella pagina (ha sempre bisogno delle direzioni per capire dove ancorarsi) (trasforma gli elementi in inline block)
-            top 
-            left 
-            right
-            bottom
-            (questa si comporta come se fosse absolute, quindi non occupa spazio nell'html e le cose possono andare sotto) (qundi gli elementi che voglio mettere sotto, li potrei mettere con un margin top) 
+            absolute =
+                mettendo top = 0 prende come punti di riferimento sopra a tutto la pagina  (stare attentissimi, perchè puo rovinare il responsive) (di solito viene usato per cose particolarissime) (tipo quando devi mettere delle icone su qualcosa es sito aulab) (il padre deve per forza avere position relative)
+                left =
+                top =
+                right =
+                bottom =
+                se si trova all'interno di un elemento (il tag padre) con position relative, avrà come di riferimento il contenitore 
+                
+            fixed: 
+                fanno in modo che la navigation bar o altri elementi rimangono fissi nella pagina (ha sempre bisogno delle direzioni per capire dove ancorarsi) (trasforma gli elementi in inline block)
+                top 
+                left 
+                right
+                bottom
+                (questa si comporta come se fosse absolute, quindi non occupa spazio nell'html e le cose possono andare sotto) (qundi gli elementi che voglio mettere sotto, li potrei mettere con un margin top) 
 
-            sticky = simile a fixed, ma mantiene alcune caratteristiche di relative 
-            (uniamo due barre e le fissiamo durante la navigazione) (quando sta nel punto principale si comporta come tutti gli elementi) (si muove in base al contenitore in cui viene inserito) (cose più particolari)
-            top 
-            bottom
-            left
-            right
+            sticky = 
+                simile a fixed, ma mantiene alcune caratteristiche di relative 
+                (uniamo due barre e le fissiamo durante la navigazione) (quando sta nel punto principale si comporta come tutti gli elementi) (si muove in base al contenitore in cui viene inserito) (cose più particolari)
+                top 
+                bottom
+                left
+                right
 
-            z-index = mi serve par far capire quale elemento si deve sovrappore sull'altro (FUNZIONA SOLO se la position di quell'elemento è diverso da static, QUINDI posso mettere tipo position-relative)
-                2 = per quella che si deve sovrapporre (i numeri sono indicativi, se ho più elementi posso usare più numeri)
-                1 = per quella che va sotto 
+            z-index = 
+                mi serve par far capire quale elemento si deve sovrappore sull'altro (FUNZIONA SOLO se la position di quell'elemento è diverso da static, QUINDI posso mettere tipo position-relative)
+                    2 = per quella che si deve sovrapporre (i numeri sono indicativi, se ho più elementi posso usare più numeri)
+                    1 = per quella che va sotto 
 
             transition: (mi indica il tempo per fare la modifica di hover (guarda dopo))
         </div>
@@ -521,8 +526,27 @@
         .classe:hover = quando mouse passa sopra cambia stato
             qui posso deciere cosa cambiare
             
+            transition: mi indica il tempo per fare la modifica di hover
+
+            Esempio
+            Ho una classe normale
+
+                .classemia{
+                    height: 150px;
+                    width: 150px;
+                }
+
+            Per richiamarla e fare modifiche quando il mouse passa sopra
+
+                .classemia:hover{
+                    height: 500px;
+                    width: 500px;
+                }
+
+        
+
         :active :focus
-        sono più rare, indicano il cambiamento di stato, posso cambiare l'elemento 
+        sono più rare, indicano il cambiamento di stato, posso cambiare l'elemento quando tipo tengo premuto con il mouse su qualcosa
     
     
     <!-- Mediaqueries =  che tipo di proprietà deve avere il css in base a dispositivo visualizzato (dal computer la scritta voglio vederla nera, dal cell rossa) (si mettono sempre in fondo, cosi sono sempre vincenti per il principio a cascata) (vedere live coding di Fabrizio)-->
@@ -551,7 +575,7 @@
     
 
     <!-- Pseudoelementi = strumento che ci permette di aggiungere elemento html senza senza inserirlo nell'html  -->
-    <div></div>
+    
             ::before
             o 
             ::after
@@ -683,6 +707,15 @@
     Display è molto più semplice
         d = display
 
+    list-unstyled = toglie puntini
+
+    overflow-hidden = proprietà che ci permette di non uscire dai bordi di qualsiasi contenitore, tutto ciò che sta uscendo fuori viene tagliato e rimane solo la parte che sta nel cotenitore
+
+
+    order (da 1 a 5)
+        Serve a ordinare gli elementi da 1 a 5 (si puo usare solo tra fratelli)
+    
+
     Attenzione su molte classi di bootstrap c'è IMPORTANT e non ti permette di sovrascrivere quello che vuoi mettere tu su quello che mettono loro
     </div>
 
@@ -777,6 +810,9 @@
         La parte disabled di solito viene tolta
 
         Per cambiare il colore delle scritte del menu posso andare tranquillamente su botstrap, ci sono opzioni proprio per questo
+        es
+        data-bs-theme sul nav iniziale = "dark" - le scritte dei link diventano bianche
+
 
         Per bloccare la navbar sopra possiamo usare questa classe di Botstrap:    
         <nav class="fixed-top"></nav>
@@ -963,6 +999,8 @@ Iterazione
     - Linguaggi compilati
         Cliccando sopra esegue codice dentro, leggendo tutto il codice, salta tutte le operazioni che si ripetono più volte, quindi quando incontra un codice uguale ad un altro, lui da direttamente la soluzione
         I compilati se trovano un errore, si bloccano, deve essere tutto il file eseguibile e ti dice dove sta l'errore
+        Quando trova un errore, blocca tutto e non ci da niente
+
 
     - Linguaggi interpretati:
         Vengono interpretati riga per riga
@@ -992,7 +1030,8 @@ Iterazione
             - Colleghiamo il file sul nostro html 
             Nel body (lo mettiamo alla fine che è più comodo ed anche perché per esempio se js è pesante è meglio ce carica prima il sito bene e poi arriva dopo js): <script src="main.js"></script>
     </div>    
-    <!-- SEQUENZA -->
+    <!-- Costanti - Variabili - Operatori - Oggetto Math -->
+    <div>
         <!-- Costanti -->
         <div>
             <!-- Regole per le costanti -->
@@ -1232,6 +1271,15 @@ Iterazione
                 console.log(num.toFixed(0)) 0 insierisco i decimali che voglio 
                 però il valore che esce è una stringa non un numero 
 
+            <!-- Operatori Ternari -->
+            E' una if semplice in forma di espressione
+            Prende come riferimento 3 cose:
+
+            ?  :
+            es
+            giovanni == 5 ? giovanni : antonio
+            Questo significa: (if ?) se giovanni è uguale a 5 allora mettimi giovanni (?), (else :) se invece non è uguale a 5 allora mettimi antonio 
+
         </section>
         <!-- Oggetto Math -->
         <section>
@@ -1287,91 +1335,95 @@ Iterazione
             Ci da il numero più piccolo tra diversi numeri (ACCETTA SOLO NUMERI)
             console.log(Math.min(5, 10, -5, 50, 38)) - ci esce -5
         </section>
-    
+    </div>
+    <!-- SEQUENZA -->
+    <div>
+    Un insieme di passaggi 
+    I passaggi devono essere eseguiti in un ordine corretto 
+    </div>
     <!-- SELEZIONE O CONDIZIONE (if - if else - switch) -->    
-        <div>
-        Tre metodi per la Condizione
+    <div>
+    Tre metodi per la Condizione
 
-        if / else
-        if / esle if / else 
-        switch
+    if / else
+    if / esle if / else 
+    switch
 
-        <!-- if / else  -->
-        serve per inserire una condizione
+    <!-- if / else  -->
+    serve per inserire una condizione
 
-            if(la condizione da verificare){
-                la cosa che deve succedere (solo se è verificata la condizione)
-            } else {
-                tutti gli altri casi
-            }
+        if(la condizione da verificare){
+            la cosa che deve succedere (solo se è verificata la condizione)
+        } else {
+            tutti gli altri casi
+        }
 
-            let anni = 17
+        let anni = 17
 
-            if(anni >= 18){
-                console.log("Sei Maggiorenne")
-            }
-            In questo caso non esce niente perché la condizione non è verificata 
+        if(anni >= 18){
+            console.log("Sei Maggiorenne")
+        }
+        In questo caso non esce niente perché la condizione non è verificata 
 
-            if(anni >= 18){
-                console.log("Sei Maggiorenne")
-            } else {
-                console.log("Sei Minorenne")
-            }
-            In questo caso esce "Sei Minorenne" perché la condizione non è verificata e in tutti gli altri casi esce "Sei Minorenne"
+        if(anni >= 18){
+            console.log("Sei Maggiorenne")
+        } else {
+            console.log("Sei Minorenne")
+        }
+        In questo caso esce "Sei Minorenne" perché la condizione non è verificata e in tutti gli altri casi esce "Sei Minorenne"
 
-            if riconosce i valori truthy e falsy
+        if riconosce i valori truthy e falsy
 
-        <!-- if / else if / else  -->
-        In questo caso abbiamo due condizioni
+    <!-- if / else if / else  -->
+    In questo caso abbiamo due condizioni
 
-            let anni = 17
+        let anni = 17
 
-            if(anni >= 18){
-                console.log("Sei Maggiorenne")
-            } else if {
-                console.log("Sei Minorenne")
-            } else{
+        if(anni >= 18){
+            console.log("Sei Maggiorenne")
+        } else if {
+            console.log("Sei Minorenne")
+        } else{
 
-            }
+        }
 
-            
-            Ricorda che va in ordine:
+        
+        Ricorda che va in ordine:
 
-            let anni = 25
+        let anni = 25
 
-            if(anni > 20) {
-                console.log("Sei Maggiorenne")
-            } else if (anni > 22) { 
-                console.log("Sei Minorenne")
-            } else {
+        if(anni > 20) {
+            console.log("Sei Maggiorenne")
+        } else if (anni > 22) { 
+            console.log("Sei Minorenne")
+        } else {
 
-            }
+        }
 
-            Qui entrerà nella prima if, perchè va in ordine
+        Qui entrerà nella prima if, perchè va in ordine
 
-        <!-- switch -->
-            Strumentod di condizione che verifica ciò che mettiamo nel switch 
-            Viene usato molto meno di if, viene usato quando c'è qualcosa di più specifico
+    <!-- switch -->
+        Strumentod di condizione che verifica ciò che mettiamo nel switch 
+        Viene usato molto meno di if, viene usato quando c'è qualcosa di più specifico
 
-            let giorno = "lunedi";
+        let giorno = "lunedi";
 
-            switch (giorno){
-                case "lunedi": (questo verifica che "lunedi" è uguale a giorno)
+        switch (giorno){
+            case "lunedi": (questo verifica che "lunedi" è uguale a giorno)
 
-                    break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova, il break non è obbligatorio, io posso anche avere diversi case senza break, cosi per qualsiasi case fa la stessa cosa)
+                break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova, il break non è obbligatorio, io posso anche avere diversi case senza break, cosi per qualsiasi case fa la stessa cosa)
 
-                default (come se fosse else, se non entra in nessuno dei case va qui)
-            }
-            QUI SPIEGO QUELLO SOPRA
-            switch (a){
-                case "b": (questo verifica che "a" è uguale a b)
+            default (come se fosse else, se non entra in nessuno dei case va qui)
+        }
+        QUI SPIEGO QUELLO SOPRA
+        switch (a){
+            case "b": (questo verifica che "a" è uguale a b)
 
-                    break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova)
+                break; (fa bloccare l'esecuzione dello switch nel momento in cui lo trova)
 
-                default (come se fosse else, se non entra in nessuno dei case va qui)
-            }
-        </div>
-
+            default (come se fosse else, se non entra in nessuno dei case va qui)
+        }
+    </div>
     <!-- ITERAZIONI O CICLI (for - while - do while)-->
     <div>
         For (più usato)
@@ -1433,7 +1485,6 @@ Iterazione
 
         usiamo do-while, quando deve essere fatto il ciclo almeno una volta
     </div>            
-    
     <!-- Funzioni -->
     <div>
         <!-- Definizione -->
@@ -1503,7 +1554,6 @@ Iterazione
         
         
     </div>
-    
         <!-- Arrow Function: Divesi modi di scrivere una Funzione -->
         <div>
             
@@ -1531,7 +1581,6 @@ Iterazione
 
                 CI PERMETTE ANCHE DI NON SCRIVERE RETURN
         </div>
-        
         <!-- Callback: funzione come argomento di un'altra funzione-->
         <div>
         Quando passo una funzione come argomento di un'altra funzione, la funzione che sto passando si chiama Callback
@@ -1539,7 +1588,6 @@ Iterazione
         Esempio:
         variabile.funzione((callback)=> )
         </div>
-
     <!-- Passaggio per Valore e Passaggio per Riferimento -->
     <div>
             <!-- Passaggio per valore (guarda video) -->
@@ -1549,7 +1597,6 @@ Iterazione
             Quando creiamo un puntatore che fa riferimento allo stesso elemento da cui lo abbiamo preso
             In Javascript i dati più complessi vengono modificati per riferimento e non per valore 
     </div>
-
     <!-- Array: Tipo di dato non primitivo-->
     <main>
         <!-- Premessa - Definizione - Regole - Esempio -->
@@ -1621,6 +1668,11 @@ Iterazione
             
                 let array2 = ["b", "ciao", "come", "va"]
                 let arrayToString = array2.join("")
+
+            <!-- .includes -->
+                controlla se esiste un elemento nell'Array
+                se esiste mette true 
+                se non esiste mette false 
                   
             <!-- .split -->
                 trasforma una stringa in un array
@@ -1631,6 +1683,9 @@ Iterazione
                 let string = num.toString()
                 console.log(string.length);
             <!-- SPREAD OPERATOR ... -> distrugge o costruisce un array in base al tipo di dato che stiamo utilizzano -->
+                esempio
+                let prices = [3, 5, 7, 10]
+                ...prices = 3, 5, 7, 10
         </section>
 
         <!-- Metodi di Ordine Superiore Degli Array -->
@@ -1640,7 +1695,6 @@ Iterazione
             <!-- .sort() --> 
             Ci permette di ordinare gli elementi di un array secondo i nostri criteri 
 
-            
             <!-- .reduce()  -->
             Accetta un array in entrata e lo riduce ad un unico valore
             
@@ -1714,6 +1768,14 @@ Iterazione
 
                 let filtered = arr.filter( (el) => el % 2 == 0)
 
+            <!-- .find() -->
+            a differenza di filter, si blocca quando trova una cosa che ci serve (quindi è piu veloce di filter), (filter anche se trova la cosa che si serve, fa il controllo su tutti i dati) 
+            Find ci restituirà per forza un solo elemento, cioè il primo che rispetta la nostra condizione mentre filter tutti quegli elementi che rispettano la nostra condizione, quindi può restituire anche più elementi. 
+
+            find mi restituisce direttamente l'oggetto che c'è all'interno dell'Array
+            filter invece mi restitisce un altro Array filtrato 
+
+
             <!-- .forEach()  -->
             Cicla ogni elemento dell'array e ci permette di aggiungere un side effect ad ogni elemento. 
 
@@ -1738,10 +1800,17 @@ Iterazione
                 let array2 = []
 
                 arr.forEach( (el)=> 
+
+
+
+            Quando uso forEach posso mettere anche due argomenti, il secondo argomento sarà l'indice, quindi primo ciclo indice 0, poi indice 1 ecc
+
+            es
+            pincopallino.forEach(el,index)
+
         </section>
 
     </main>
-
     <!-- Oggetti: Tipo di dato non primitivo -->
     <div>
         <!-- Definizione -->
@@ -1884,10 +1953,598 @@ Iterazione
                 }
             </div>
     </div>          
-                
+     
+    <!-- DOM: Document Object Model-->
+    <div>
+        Quando andiamo a manipolare i dati su Javascript, si dice che si va a manipolare il DOM 
+        
+        Sul browser i dati da html a javascript diventano oggetti 
+        
+        Quindi body diventa un oggetto e tutti gli altri tag diventano alti oggetti (quindi abbiamo oggetto dentro oggetto ecc.)
+        
+        <!-- document -->
+        usiamo document per richiamare il nostro html ()
+
+        Abbiamo quindi document che è un oggetto con tanti tag all'interno che a sua volta sono altri oggetti
+
+        quindi potremmo fare:
+        document.body.style.backgroundColor = "red" 
+        (mi cambierà il colore dello sfondo)
+
+        backgroundColor in css il background si scrive background-color, ma qui si scrive cosi backgroundColor 
+
+        <!-- window (lo usiamo solo per controllare lo scroll)-->
+        E' la schermata del browser
+
+        Quello che ci interessa è scrollX o scrollY (es. window.scrollY) (ci servono per controllare lo scroll orizzontale o verticale)
+
+
+        <!-- console.dir -->
+        ci fa vedere document come se fosse un oggetto
+
+        <!-- Selezionare un tag specifico: -->
+        Metodi vecchi:
+        per classe
+        per id
+        per tag
+        
+        Metodi nuovi:
+        - querySelector
+        - querySelectorAll
+
+        querySelector = con questo ne posso selzionare e modificare solo uno
+
+            let h1 = document.querySelector("quidentrocimettoilselettorechestoscegliendo")
+            es
+            let h1 = document.querySelector("h1 o .titolo o #titolo")
+
+            mi creo prima let h1 perché cosi creo una variabile che mi porta direttamente in quel punto 
+
+
+        querySelectorAll = posso selezionare e modificare più elementi
+
+            querySelectorAll(".parag") = ci permette di modificare anche più elementi, ma trasforma gli elementi in una Noodelist (un array particolare dove non possiamo usare tutti i metodi che abbiamo visto ma solo alcuni, esempio forEach), cioè un array e quindi magari possiamo usare un forEach per modificare diversi dati all'interno.
+            Trasforma in una Nodelist perché è meno pesante rispetto ad un Array normale, ma poi se vogliamo trasformarla in un Array normale perché magari vogliamo manipolare i dati in altri modi 
+
+            Per trasformare una Nodelist in Array = 
+            let nodelistToArray = Array.form(la nodelist da trasformare)
+
+
+            
+        <!-- Modificare più proprietà di una classe css da JS  -->
+
+        classList 
+
+            - h1.classList.add("titolo")
+            aggiungo una class = "titolo" sul tag html h1 
+            (a quel punto su css possiamo andare a richiamarci quella classe e fare tutte le modifiche che vogliamo o altrimenti usare una classe di bootstrap)
+
+            - h1.classList.remove("pincopallino")
+            rimuove una class = "pincopallino" sul tag html h1 
+
+            - h1.classList.toggle("titolo")
+            alterna add o remove
+            quindi se non c'è la classe "titolo" lui aggiunge la classe
+            se c'è la classe "tiolo" lui la rimuove 
+            
+            (le modifiche in javascript che facciamo sul css sono modifiche style in line document.style ecc.)
+
+        <!-- Modificare contenuto di un elemento HTML da JS -->
+
+        1. innerHTML (99% dei casi)
+        2. innerText 
+
+            h1.innerHTML = "Hackademy 125" 
+            Mi cambia il titolo 
+
+            se scriviamo 
+            h1.innerHTML = "Hackademy <span class=""text-primary">125</span>" 
+            se noi scriviamo altri tag html lui me li modifica in base al tag (quindi in questo caso avrò 125 blu)
+
+            innerText = mi scrive direttamente come lo scrivo senza fare le modifiche se inserisco un tag 
+
+
+        <!-- Creare contenuto su html -->
+
+            <!-- Crea un tag - createElement -->
+            let bottone = document.createElement("nome del tag che voglio creare")
+
+            <!-- Personalizzazione classi - classList.add, remove, toggle-->
+            bottone.classList.add("text-danger")
+            
+            se ne devo mettere + di una classe
+            bottone.classList.add("text-danger", "d-flex")
+
+            <!-- Riempire l'elemento html - innerHTML -->
+            bottone.innerHTML = "Click me"
+
+            <!-- Aggiungere elemento HTML creato - appentChild  -->
+            document.body.appendChild(bottone)
+            se non dico dove metterlo, lui lo mette alla fine
+
+            se lo voglio mettere in una parte specifica 
+            mettiamo un id a un <div id="contenitore"> </div> 
+
+            <!-- Catturare il contenitore nel quale vogliamo appendere l'elemento - querySelector -->
+            let contenitore = document.querySelector("#contenitore")
+
+            contenitore.appendChild(bottone) 
+
+            I dati da manipolare arrivano sempre dall'esterno e soprattutto dal backend 
+            I dati che arrivano sono sempre Array con Oggetti all'interno. 
+
+
+        <!-- Dom Eventi -->
+        Scattare di un qualcosa all'interazione di un utente 
+
+        Esempio deve succedere qualcosa quando clicco qualcosa 
+
+        Prima cosa da fare: Catturare elemento 
+        Diamo un id a elemento html esempio <button id="click"></button>
+
+
+        lo catturiamo con
+
+        let btnClick = document.querySelector(`)
+
+        btn.addEventListener()
+
+        ha bisogno di due argomenti:
+        1) tipologia evento (click, scroll ecc.)
+        2) Cosa deve succedere 
+
+        <!-- click -->
+        esempio
+        btnClick.addEventListener("click", ()=>{
+            console.log ("ho cliccato")
+        })
+        ogni volta che clicco mi uscirà ho cliccato 
+        
+        Form (spiegato negli ultimi minuti del video DOM 1)
+
+        Esercizio Bowling su DOM (video Dom 2)
+
+
+        IMPORTANTE:
+        Quando su JS devo prendere input di qualcosa (cioè quando inserisco una casellina dove scrivo un nome all'interno) e mi serve semplicemente il nome inserito, devo usare la proprietà value del'input, quindi input.value (perché ricorda sempre che diventa un oggetto quando le cose vengono portate in JS)
+
+
+        <!-- scroll -->
+        per usare scroll dobbiamo per forza usare window 
+
+        esempio
+        window.addEventListener("scroll", ()=>{
+            if (window.scrollY>0){
+                deve succedere qualcosa, tipo la navbar diventa nera
+            }
+        })
+
+        Per cambiare qualcosa mentre scrolliamo, usiamo i px per regolarci
+        i px partono da quanto scendo dal basso
+
+        <!-- input -->
+        questo evento puo essere utilizzato quando abbiamo dei campi input, tipo dei radiobutton e vogliamo cliccarci sopra 
+
+        esempio
+        a.addEventListener("input", ()=>{
+            if (condizione){
+            cosa deve succedere
+            }
+        })
+
+        <!-- Aos -->
+        E' una libreria che serve per prenderci alcuni elementi dello scroll, prima ci copiamo la CDN CSS, JS e la su inizializzazione 
+
+        quindi sono 3 cose da copiare 
+        CSS 
+        JS 
+        e un altro tag JS (quello .init deve sempre andare dopo la prima CDN JS)
+
+        Aos è già settato in modo da attivare l'animazione quando arrivo in quel ppunto preciso della pagina (questo è importante perché se usiamo semplicemente un'animazione senza Aos e senze modificarla, li l'animazione parte al caricamento della pagina e quindi se l'animazione esempio si trova nel footer, noi non riusciamo neanche a vederla)
+
+
+        <!-- Azioni in parallelo: chiamate asincrone -->
+        Normalmente su JS ogni azione inizia dopo che finsce quella prima, eseguendo il codice riga per riga.
+        Le chiamate asincrone ci permettono di fare delle azioni in momenti diversi
+        Partono sempre dopo che ha caricato tutto il file javascript
+            <!-- setInterval() -->
+            E' una funzione che fa succedere qualcosa ogni tot tempo e lo fa parallelamente ad altre azioni (chiamata asincrona) 
+
+            setInterval((){
+                cosa deve succedere
+            }, ogni quanto tempo deve succedere)
+
+
+            <!-- clearInterval() -->
+            Serve a stoppare qualcosa, tipo il setIterval di sopra
+            clearInterval(ha bisogno dell'intervallo da stoppare per funzionare)
+
+            clearInterval(variabileintervallo)
+
+            Quindi per funzionare ha bisogno che associamo il primo intevallo, cioe seIterval in questo caso, in una variabile e poi la variable la mettiamo  nel clearInterval
+
+            GUARDARE BENE LEZIONE PRESTO 1, LA PARTE FINALE
+
+
+
+            Esempio
+            let numUtenti = document.querySelector("#numUtenti")
+            let numProdotti = document.querySelector("#numProdotti")
+            let numMessaggi = document.querySelector("#numMessaggi")
+
+            function conteggioNumeri(numGiri, numTip, velocity) {
+
+                let counter = 0
+                let intervallo = setInterval(() => {
+                        if (counter <= numGiri) {
+                            counter++
+                            numTip.innerHTML=counter
+                        } else{
+                            clearInterval(intervallo);
+                        }
+                    },velocity);
+            }
+
+            conteggioNumeri(100, numUtenti, 100)
+            conteggioNumeri(500, numProdotti, 10)
+            conteggioNumeri(1000, numMessaggi, 10)
+
+
+            <!-- setTimeout -->
+            Far succedere qualcosa dopo un po' di tempo.
+            Serve a dire cosa deve succedere e dopo quanto tempo
+
+            qualcosa.setTimeout(()=>{
+                qui cosa deve succedere
+            }, qui i secondi che vanno in millisecondi)
+
+
+            <!-- IntersectionObserver -->
+            E' una classe, cioè un metodo per creare un oggetto con determinate caratteristiche
+            Non può essere modificato 
+            Ma puo essere caratterizzato con delle opzioni che sono state impostate da chi ha creato queta classe.
+            le classi creano sempre degli oggetti 
+            le classi iniziano sempre con lettera maiuscola
+
+            Questo ci serve perché lo scroll in base a cell, comp, tablet può cambiare e quidi non è preciso
+            Quindi in questo caso quando un elemento entra nella nostra pagina, parte un'azione 
+            
+            E' un interfaccia che ci permette di osservare i cambiamenti di un elemento quando si interseca con un altro 
+
+            CI restiruisce sempre un oggetto             
+            
+
+
+            La struttura:
+
+            let prova = document.querySelector("#prova")
+
+            let observer = new IntersectionObserver((entries)=> {
+                entries.forEach((entry)=> {
+                    if(entry.isIntersecting){
+
+                    }
+
+                })
+            })
+
+            observer.observe(prova)
+
+            <!-- new serve a creare un nuovo OGGETTO da questa classe (IntersectionObserver) -->
+            <!-- entries sono gli elementi che devono essere presi in considerazione per far scattare qualcosa che vogliamo far scattare, creerà semre un ARRAY, anche se prende in considerazione un elemento -->
+            <!-- isIntersecting ci permette di capire se un elemento è all'interno della nostra schermata (true) o non è all'interno (false) -->
+            <!-- .observe è una proprietà che ci permette di legare la nostra IntersectionObserver ad un elemnto -->
+
+            In questo caso qui ogni volta che incontro un elemento parte un'azione mia, quindi tutte le volte che ritorno li riparte
+
+            Ma se tipo voglio farlo attivare solo la prima volta che incontro quell'elemento GUARDARE VIDEO: 
+
+            let numUtenti = document.querySelector("#numUtenti")
+            let numProdotti = document.querySelector("#numProdotti")
+            let numMessaggi = document.querySelector("#numMessaggi")
+
+            function conteggioNumeri(numGiri, numTip, velocity) {
+                let counter = 0
+                let intervallo = setInterval(() => {
+                        if (counter <= numGiri) {
+                            counter++
+                            numTip.innerHTML=counter
+                        } else{
+                            clearInterval(intervallo);
+                        }
+                    },velocity);
+
+            let intersec = false 
+
+            let observer = new IntersectionObserver((entries)=> {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && intersec == false) {
+                        conteggioNumeri(100, numUtenti, 1000)
+                        conteggioNumeri(500, numProdotti, 1000)
+                        conteggioNumeri(1000, numMessaggi, 1000)
+                        intersec = true
+                    }
+                });
+            }) 
+
+            observer.observe(numUtenti)
+
+
+        <!-- CHIAMATE API - Application programming Interface -->
+        Mette in collegamento due software
+        Vengono fatte con Chiamate Asincrone perché ci vorrà un po' di tempo per far arrivare quei dati e quindi se la chiamata fosse sincrona javascript mi potrebbe dare un errore perché magari ci sono cose dopo collegate ai dati che ci servono ma i dati ancora non sono arrivati.
+        In che formato viaggiano le informazioni online? Viaggiano solitamento con un Array di Oggetti (pero gli Array e Oggetti sono molto pesanti) 
+        di conseguenza i dati viaggiano un un alto formato cioè = JSON (leggi sotto)
+        
+        <!-- JSON javascript Object Notation - Un tipo di dati che viaggia e che utilizziamo per rendere più leggeri dati - gli Array di Oggetti li trasforma in stringhe, cosi sono più leggeri-->
+        Il formato è molto preciso (es. Le proprietà degli oggetti devono essere sempre con gli apicetti)
+
+        es creo file prodotti.json
+
+        Per fare una chiamata API si usa 
+        <!-- fetch() -->
+        es
+        fetch("./prodotti.json")
+
+        <!-- La risposta di una fetch avviene mediante un oggetto chiamato PROMISE  -->
+        Promise puo essere di tre tipi:
+        completata = sono arrivati i dati
+        in lavorazione = stanno arrivando i dati
+        rifiutata = la richiesta non viene accettata
+
+        fetch("./prodotti.json").then()
+        <!-- .then() è un metodo che ci serve a dire cosa deve succedere dopo che la richiesta è anadata a buon fine (quindi se è stat completata o rifiutata)  -->
+
+        fetch("./prodotti.json").then((response)=> response.json()).then((data) => {
+        })
+        questa sarà sempre cosi e serve semplicemente a prenderci i dati dal file .json
+
+
+        <!-- CREAZIONE FILTRI -->
+
+        3 Passaggi:
+
+        1. Funzione per settare le impostazione che ci servono
+
+        2. Funzione per impostare il filtro.
+
+        3. Evento che fa scattare il filtro
+
+
+    </div>
 </div>
 
+<!-- BACKEND -->
+<div>
+    Server = computer dove è Hostato il nostro sito web, si basa sulla comunicazione tra  server e client
 
-       
+    esempio ricerca su google 
+
+    Il mio pc è client
+    fa richiesta al server di amazon per entrare nella pagina web  
+
+    Differenza tra Linguaggi compilati e interpretati 
+    (ce l'ho scritto in Javascript)
+
+</div>
+
+<!-- PHP -->
+<div>
+    <!-- Definzione e Come iniziare -->
+    <div>
+    <!-- Definizione -->
+    E' un linguaggio di programmazione utilizzato lato server 
+    Linguaggio interpretato
+
+    PHP inizialmente stava per Personal Home Page, poi è stato cambiato
+    PHP oggi sta per Hypertext Preprocessor 
+    - Hypertext = il nostro foglio html, foglio che contiene dei link 
+    - Preprocessor = prende html, ci fa sopra una logica e prima che l'utente veda le modifiche applica questa logica
+    
+    Paradigma Object Oriented =
+
+    PHP Interagisce con il database 
+    (e' anche possibile scrivere html e php insieme, ma non si fa più )
+
+    - Può accedere e modificare cookies (sono )
+    - Cripta i dati e le validazioni (validazioni = capacità di controllare i dati che  sta inserendo un utente)
+
+    <!-- Come iniziare -->
+    Installare programma php
+    Un file php è .php 
+
+    - La prima cosa da fare e aprire il tag:
+    <?php
+    ?> (questo puo essere anche omesso se scriveremo solo php su questo file) 
+
+    - punto e virgola alla fine di ogni riga SONO OBBLIGATORIII!!!
+
+    - Case sensitive = differenza tra lettera maiuscola e minuscola 
+
+    - Si userà il terminale per vedere le modifiche che facciamo (Live server non si usa per il backend!!)
+        - Nel terminale, clear ci svuota tutto
+    
+    - per vedere le modifiche:  php index.php 
+    </div>
+    
+    <!-- Variabili, Stampare elementi, Commenti, String Interpolation -->
+    <div>
+    <!-- Variabili -->
+    Variabile php:(let il Javascript)
+
+    $ciao = 3;
+
+    Anche quando la richiamo devo mettere $
+    una variabile deve iniziare con una lettera o underscore 
+
+    <!-- Stampare gli elementi (tipo console.log di Javascript) -->
+    echo $name - questo è abbastanza limitato, esempio non puo stamapre un array 
+
+    o altrimenti
+        
+    var_dump($name) -  questo è più completo
+
+    Quando stampo, mi mette tutto vicino 
+
+    Per andare a capo si usa <!-- Escape Character \n = --> 
+
+    <!-- Per i commenti -->
+    //! cosi è rosso
+
+    //? cosi è blu 
+
+    //* così è verde
+
+    <!-- String Interpolation -->
+    Si può fare con gli apicetti doppi, mentre le backtick `` non servono a niente qui 
+    
+    esempio
+    $name = Valerio
+    $michiamo =esempio = "ciao sono $name"
+
+    </div>
+
+    <!-- Tipi di dato -->
+    <div>
+    <!-- Tipizzazione debole -->
+    Non si deve specificare il tipo di dato ogni volta (come javascript)
+
+        <!-- 1) Primitivi = chiamati cosi perchè nati all'inizio -->
+        interi = 3 
+        Float = 5,3
+        String = stringa
+        Booleani = true o false
 
 
+        <!-- 2) composti o user-defined -->
+        Possono contenere più tipi di dati all'interno 
+
+        Si dividono in:
+        - Array (guarda dopo)
+        - Oggetti (guarda dopo)
+
+        <!-- 3) speciali= che non vedremo -->
+
+    
+
+    
+    </div>
+
+    <!-- Operatori -->
+    <div>
+        <!-- Matematici -->
+        + - * /
+
+        <!-- di Confronto -->
+        Confrontano e ci danno sempre un true o false 
+        ==
+        === 
+        !=
+        > < 
+        ecc 
+
+        <!-- Logici -->
+        $$ , || , !  
+        
+        $$ restituisce true, se entrambi sono truthy 
+        || restituisce true, se almeno un valore è truthy 
+        ! restituisce true, se il valore è falsy  (esce il contrario di quello che metti)
+
+        Truthy = valore che convertito in booleano ritorna true 
+            Tutti i nuomri diversi da 0
+            Stringhe non vuote 
+            Array non vuoti 
+            True 
+
+        Falsy = valore che convertito in booleano ritorna false 
+            0
+            Stringhe vuote 
+            Array vuoti 
+            false 
+
+        <!-- String Operator -->
+
+        Per concatenare delle stringhe uso il punto . (in Javascript usavo il +)
+
+        $name = "giovanni"
+        $surname = "francesco"
+
+        echo $name.$surname
+    </div>
+
+    <!-- SEQUENZA, SELEZIONE (CONDIZIONE) E CICLI (ITERAZIONE) -->
+    <div>
+        <!-- SEQUENZA -->
+        Un insieme di passaggi 
+        I passaggi devono essere eseguiti in un ordine corretto 
+
+        <!-- SELEZIONE o CONDIZIONE -->
+        - if 
+        - if.. else if 
+        - switch 
+
+        tutto si può fare con entrambi 
+
+        <!-- CICLO o ITERAZIONE-->
+        - for = esegue un blocco di istruzioni un numero FINITO di volte 
+        - while = esegue un blocco di istruzioni fintanto che una condizione è vera
+        - do while = esegue un blocco di istruzioni fintanto che una condizione è vera, ma il controllo è effettuato in coda alle istruzioni 
+
+        - foreach = è diverso da Javascript 
+
+        foreach ("array di riferimento" as "ogni elemento"){
+        }
+
+            Esempio 1: Array normale
+
+                $lista = ["Lorenzo", "Valerio", "Francesco", "Michele"];
+
+                foreach($lista as $name){
+                    echo $name;
+                }
+
+            Esempio 2: Array Associativo
+                Si possono anche usare le chiavi all'interno di un foreach (negli array associativi)
+
+                $arrayAsso = [
+                    "nome" => "Pippo";
+                    "eta" => 5;
+                ];
+                
+                foreach($lista as $chiave => $valore){
+                    echo $chiave - $valore;
+                };
+
+                In questo caso mi stamperà sia la chiave e sia il valore. 
+                cioè "nome - "pippo" ecc ecc  
+
+        
+
+
+    </div>
+
+    <!-- ARRAY -->
+    <div>
+        <!-- Premessa -->
+        In PHP un'array non è un oggetto, quindi non posso usare le cose tipo: array.length array.map ecc ecc ma in PHP è stato risolto quesoto problmea, creando delle funzioni che fanno più o meno la stessa cosa
+
+        <!-- Array normale -->
+        Simile a quello di Javascript 
+        $array = ["Pippo", 5, true]; 
+
+        <!-- Array associativi o Chiave - Valore -->
+        In questo caso l'indice non è 0, 1 , 2 , ecc.
+        Ma l'indice diventa quello che scrivo come chiave
+
+        Esempio
+
+        $arrayAsso = [
+            "nome" => "Pippo"
+            <!-- nome è la chiave, quindi sarebbe l'indice in questo caso -->
+            <!-- Pippo è il valore -->
+            "eta" => 5
+        ]
+
+        var_dump($arrayAsso["nome"]) - uscirà Pippo 
+    </div>
+</div>
