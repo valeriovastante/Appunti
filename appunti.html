@@ -1956,6 +1956,9 @@ Iterazione
      
     <!-- DOM: Document Object Model-->
     <div>
+        <!-- Definizione, document, window -->
+        <div>
+        <!-- Definizione -->
         Quando andiamo a manipolare i dati su Javascript, si dice che si va a manipolare il DOM 
         
         Sul browser i dati da html a javascript diventano oggetti 
@@ -1982,6 +1985,10 @@ Iterazione
         <!-- console.dir -->
         ci fa vedere document come se fosse un oggetto
 
+        </div>
+
+        <!-- Modifiche HTML & CSS con JS -->
+        <div>
         <!-- Selezionare un tag specifico: -->
         Metodi vecchi:
         per classe
@@ -2073,8 +2080,11 @@ Iterazione
             I dati da manipolare arrivano sempre dall'esterno e soprattutto dal backend 
             I dati che arrivano sono sempre Array con Oggetti all'interno. 
 
+        </div>
 
         <!-- Dom Eventi -->
+        <div>
+        <!-- Definizione -->
         Scattare di un qualcosa all'interazione di un utente 
 
         Esempio deve succedere qualcosa quando clicco qualcosa 
@@ -2122,6 +2132,16 @@ Iterazione
         Per cambiare qualcosa mentre scrolliamo, usiamo i px per regolarci
         i px partono da quanto scendo dal basso
 
+            <!-- Aos -->
+            E' una libreria che serve per prenderci alcuni elementi dello scroll, prima ci copiamo la CDN CSS, JS e la su inizializzazione 
+
+            quindi sono 3 cose da copiare 
+            CSS 
+            JS 
+            e un altro tag JS (quello .init deve sempre andare dopo la prima CDN JS)
+
+            Aos è già settato in modo da attivare l'animazione quando arrivo in quel ppunto preciso della pagina (questo è importante perché se usiamo semplicemente un'animazione senza Aos e senze modificarla, li l'animazione parte al caricamento della pagina e quindi se l'animazione esempio si trova nel footer, noi non riusciamo neanche a vederla)
+
         <!-- input -->
         questo evento puo essere utilizzato quando abbiamo dei campi input, tipo dei radiobutton e vogliamo cliccarci sopra 
 
@@ -2132,17 +2152,11 @@ Iterazione
             }
         })
 
-        <!-- Aos -->
-        E' una libreria che serve per prenderci alcuni elementi dello scroll, prima ci copiamo la CDN CSS, JS e la su inizializzazione 
+        
+        </div>
 
-        quindi sono 3 cose da copiare 
-        CSS 
-        JS 
-        e un altro tag JS (quello .init deve sempre andare dopo la prima CDN JS)
-
-        Aos è già settato in modo da attivare l'animazione quando arrivo in quel ppunto preciso della pagina (questo è importante perché se usiamo semplicemente un'animazione senza Aos e senze modificarla, li l'animazione parte al caricamento della pagina e quindi se l'animazione esempio si trova nel footer, noi non riusciamo neanche a vederla)
-
-
+        <!-- Chiamate Asincrone -->
+        <div>
         <!-- Azioni in parallelo: chiamate asincrone -->
         Normalmente su JS ogni azione inizia dopo che finsce quella prima, eseguendo il codice riga per riga.
         Le chiamate asincrone ci permettono di fare delle azioni in momenti diversi
@@ -2164,8 +2178,6 @@ Iterazione
             Quindi per funzionare ha bisogno che associamo il primo intevallo, cioe seIterval in questo caso, in una variabile e poi la variable la mettiamo  nel clearInterval
 
             GUARDARE BENE LEZIONE PRESTO 1, LA PARTE FINALE
-
-
 
             Esempio
             let numUtenti = document.querySelector("#numUtenti")
@@ -2198,78 +2210,82 @@ Iterazione
                 qui cosa deve succedere
             }, qui i secondi che vanno in millisecondi)
 
+            </div>
 
-            <!-- IntersectionObserver -->
-            E' una classe, cioè un metodo per creare un oggetto con determinate caratteristiche
-            Non può essere modificato 
-            Ma puo essere caratterizzato con delle opzioni che sono state impostate da chi ha creato queta classe.
-            le classi creano sempre degli oggetti 
-            le classi iniziano sempre con lettera maiuscola
+        <!-- IntersectionObserver -->
+        <div>
+        <!-- Definizione e Struttura -->
+        E' una classe, cioè un metodo per creare un oggetto con determinate caratteristiche
+        Non può essere modificato 
+        Ma puo essere caratterizzato con delle opzioni che sono state impostate da chi ha creato queta classe.
+        le classi creano sempre degli oggetti 
+        le classi iniziano sempre con lettera maiuscola
 
-            Questo ci serve perché lo scroll in base a cell, comp, tablet può cambiare e quidi non è preciso
-            Quindi in questo caso quando un elemento entra nella nostra pagina, parte un'azione 
-            
-            E' un interfaccia che ci permette di osservare i cambiamenti di un elemento quando si interseca con un altro 
+        Questo ci serve perché lo scroll in base a cell, comp, tablet può cambiare e quidi non è preciso
+        Quindi in questo caso quando un elemento entra nella nostra pagina, parte un'azione 
+        
+        E' un interfaccia che ci permette di osservare i cambiamenti di un elemento quando si interseca con un altro 
 
-            CI restiruisce sempre un oggetto             
-            
+        CI restiruisce sempre un oggetto             
+        
 
+        La struttura:
 
-            La struttura:
+        let prova = document.querySelector("#prova")
 
-            let prova = document.querySelector("#prova")
+        let observer = new IntersectionObserver((entries)=> {
+            entries.forEach((entry)=> {
+                if(entry.isIntersecting){
 
-            let observer = new IntersectionObserver((entries)=> {
-                entries.forEach((entry)=> {
-                    if(entry.isIntersecting){
+                }
 
-                    }
-
-                })
             })
+        })
 
-            observer.observe(prova)
+        observer.observe(prova)
 
-            <!-- new serve a creare un nuovo OGGETTO da questa classe (IntersectionObserver) -->
-            <!-- entries sono gli elementi che devono essere presi in considerazione per far scattare qualcosa che vogliamo far scattare, creerà semre un ARRAY, anche se prende in considerazione un elemento -->
-            <!-- isIntersecting ci permette di capire se un elemento è all'interno della nostra schermata (true) o non è all'interno (false) -->
-            <!-- .observe è una proprietà che ci permette di legare la nostra IntersectionObserver ad un elemnto -->
+        <!-- new serve a creare un nuovo OGGETTO da questa classe (IntersectionObserver) -->
+        <!-- entries sono gli elementi che devono essere presi in considerazione per far scattare qualcosa che vogliamo far scattare, creerà semre un ARRAY, anche se prende in considerazione un elemento -->
+        <!-- isIntersecting ci permette di capire se un elemento è all'interno della nostra schermata (true) o non è all'interno (false) -->
+        <!-- .observe è una proprietà che ci permette di legare la nostra IntersectionObserver ad un elemnto -->
 
-            In questo caso qui ogni volta che incontro un elemento parte un'azione mia, quindi tutte le volte che ritorno li riparte
+        In questo caso qui ogni volta che incontro un elemento parte un'azione mia, quindi tutte le volte che ritorno li riparte
 
-            Ma se tipo voglio farlo attivare solo la prima volta che incontro quell'elemento GUARDARE VIDEO: 
+        Ma se tipo voglio farlo attivare solo la prima volta che incontro quell'elemento GUARDARE VIDEO: 
 
-            let numUtenti = document.querySelector("#numUtenti")
-            let numProdotti = document.querySelector("#numProdotti")
-            let numMessaggi = document.querySelector("#numMessaggi")
+        let numUtenti = document.querySelector("#numUtenti")
+        let numProdotti = document.querySelector("#numProdotti")
+        let numMessaggi = document.querySelector("#numMessaggi")
 
-            function conteggioNumeri(numGiri, numTip, velocity) {
-                let counter = 0
-                let intervallo = setInterval(() => {
-                        if (counter <= numGiri) {
-                            counter++
-                            numTip.innerHTML=counter
-                        } else{
-                            clearInterval(intervallo);
-                        }
-                    },velocity);
-
-            let intersec = false 
-
-            let observer = new IntersectionObserver((entries)=> {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting && intersec == false) {
-                        conteggioNumeri(100, numUtenti, 1000)
-                        conteggioNumeri(500, numProdotti, 1000)
-                        conteggioNumeri(1000, numMessaggi, 1000)
-                        intersec = true
+        function conteggioNumeri(numGiri, numTip, velocity) {
+            let counter = 0
+            let intervallo = setInterval(() => {
+                    if (counter <= numGiri) {
+                        counter++
+                        numTip.innerHTML=counter
+                    } else{
+                        clearInterval(intervallo);
                     }
-                });
-            }) 
+                },velocity);
 
-            observer.observe(numUtenti)
+        let intersec = false 
 
+        let observer = new IntersectionObserver((entries)=> {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && intersec == false) {
+                    conteggioNumeri(100, numUtenti, 1000)
+                    conteggioNumeri(500, numProdotti, 1000)
+                    conteggioNumeri(1000, numMessaggi, 1000)
+                    intersec = true
+                }
+            });
+        }) 
 
+        observer.observe(numUtenti)
+        </div>
+
+        <!-- Chiamate API - JSON - fetch() -->
+        <div>
         <!-- CHIAMATE API - Application programming Interface -->
         Mette in collegamento due software
         Vengono fatte con Chiamate Asincrone perché ci vorrà un po' di tempo per far arrivare quei dati e quindi se la chiamata fosse sincrona javascript mi potrebbe dare un errore perché magari ci sono cose dopo collegate ai dati che ci servono ma i dati ancora non sono arrivati.
@@ -2282,24 +2298,28 @@ Iterazione
         es creo file prodotti.json
 
         Per fare una chiamata API si usa 
+
         <!-- fetch() -->
         es
         fetch("./prodotti.json")
 
-        <!-- La risposta di una fetch avviene mediante un oggetto chiamato PROMISE  -->
-        Promise puo essere di tre tipi:
-        completata = sono arrivati i dati
-        in lavorazione = stanno arrivando i dati
-        rifiutata = la richiesta non viene accettata
+            <!-- La risposta di una fetch avviene mediante un oggetto chiamato PROMISE  -->
+            Promise puo essere di tre tipi:
+            completata = sono arrivati i dati
+            in lavorazione = stanno arrivando i dati
+            rifiutata = la richiesta non viene accettata
 
-        fetch("./prodotti.json").then()
-        <!-- .then() è un metodo che ci serve a dire cosa deve succedere dopo che la richiesta è anadata a buon fine (quindi se è stat completata o rifiutata)  -->
+            fetch("./prodotti.json").then()
+            <!-- .then() è un metodo che ci serve a dire cosa deve succedere dopo che la richiesta è anadata a buon fine (quindi se è stat completata o rifiutata)  -->
 
-        fetch("./prodotti.json").then((response)=> response.json()).then((data) => {
-        })
-        questa sarà sempre cosi e serve semplicemente a prenderci i dati dal file .json
+            fetch("./prodotti.json").then((response)=> response.json()).then((data) => {
+            })
+            questa sarà sempre cosi e serve semplicemente a prenderci i dati dal file .json
 
+        </div>
 
+        <!-- Creazione Filtri - Libreria Caroselli -->
+        <div>
         <!-- CREAZIONE FILTRI -->
 
         3 Passaggi:
@@ -2310,6 +2330,13 @@ Iterazione
 
         3. Evento che fa scattare il filtro
 
+        <!-- LIBRERIA CAROSELLI -->
+        Swiper Js
+
+        Prima si copia la cdn
+
+        Poi si deve inizializzare e la sua inizializzazione è particolare perché c'è una classe chiamata new che nel caso in cui troviamo caroselli che si muovono in diversi modi, dobbiamo andare ad aggiornare anche la sua inizializzazione 
+        </div>
 
     </div>
 </div>
@@ -2333,6 +2360,8 @@ Iterazione
     <!-- Definzione e Come iniziare -->
     <div>
     <!-- Definizione -->
+    Documentazione = php documentation
+
     E' un linguaggio di programmazione utilizzato lato server 
     Linguaggio interpretato
 
@@ -2367,7 +2396,7 @@ Iterazione
     - per vedere le modifiche:  php index.php 
     </div>
     
-    <!-- Variabili, Stampare elementi, Commenti, String Interpolation -->
+    <!-- Variabili, Stampare elementi, Commenti, String Interpolation - Scope -->
     <div>
     <!-- Variabili -->
     Variabile php:(let il Javascript)
@@ -2402,6 +2431,7 @@ Iterazione
     $name = Valerio
     $michiamo =esempio = "ciao sono $name"
 
+    <!-- Scope Locale (non Globale come in JS) -->
     </div>
 
     <!-- Tipi di dato -->
@@ -2517,13 +2547,9 @@ Iterazione
 
                 In questo caso mi stamperà sia la chiave e sia il valore. 
                 cioè "nome - "pippo" ecc ecc  
-
-        
-
-
     </div>
 
-    <!-- ARRAY -->
+    <!-- Array -->
     <div>
         <!-- Premessa -->
         In PHP un'array non è un oggetto, quindi non posso usare le cose tipo: array.length array.map ecc ecc ma in PHP è stato risolto quesoto problmea, creando delle funzioni che fanno più o meno la stessa cosa
@@ -2546,5 +2572,278 @@ Iterazione
         ]
 
         var_dump($arrayAsso["nome"]) - uscirà Pippo 
+    </div>
+
+    <!-- Funzioni -->
+    <div>
+        <!-- Definizione - Tipologie - return - readLine - stringhe/array-->
+        <div>
+        <!-- Definizione -->
+        Porzione di codice che può essere ripetuta più volte 
+
+        <!-- Tipologie -->
+        Due tipi di funzione:
+
+            <!-- Built-in Function  -->
+
+                Visto che qui non ci sono i metodi come Javascrit per fare tante cose , qui le built-in function 
+
+                es. var_dump();
+                count(); (serve a contare quanti elementi ci sono in un'array)
+
+             <!-- User Function  -->
+
+                1. Prima si dichiara
+                2. Poi si richiama 
+
+                function nomeFunzione($parametri){
+                    codice da eseguire
+                }
+
+                nomeFunzione($parametri)
+
+                In PHP tutte le variabili hanno SCOPE LOCALE, se dichiaro una Variabile fuori dalla funzione, non può essere presa all'interno (diversamente da Javascript che le variabili avevano Scope Globale) 
+
+        <!-- return -->
+        Uguale a Javascript
+
+        <!-- readLine = da la possibilità di scrivere, tipo prompt -->
+        $scrivi = readLine("Inserisci qualcosa")
+        Ti da la possibilità di scrivere qualcosa nel terminale
+            
+        <!-- Le stringhe possono essere considerate come array, quindi con indice da 0 in poi  -->  
+        Quindi le puoi ciclare tipo con un ciclo for 
+
+        </div>
+
+        <!-- Scope - Passaggio per Valore - Passaggio per Riferimento -->
+        <div>
+        <!-- Passaggio per Valore (99% si usa questo): Viene passata una COPIA del contenuto della variabile, non la variabile vera e propria (scope locale) --> 
+
+        $val = 10;
+
+        function increment($num){
+            $num++;
+        }
+
+        increment($val);
+        echo $val; 
+
+        In questo caso echo stamperà 10.
+        Mentre se echo lo inseriamo all'interno della funzione dopo $num++ sarà 11.
+
+        <!-- Passaggio per Riferimento (con & davanti a parametri): In questo caso si modifica la variabile iniziale-->
+        $val = 10;
+
+        function increment2(&$num){
+            $num++;
+        }
+
+        increment($val);
+        echo $val; 
+
+        In questo caso echo stamperà 11.
+        </div>
+
+        <!-- Parametro di Default & Parametri Variabili -->
+        <div>
+        <!-- Parametro di Default - Un parametro che viene utilizzato in assenza di altri parametri passati -->
+
+        COSI NON FUNZIONA
+        function increment2($a, $b){
+            echo $a * $b;
+        }
+
+        multiply(10);
+
+        COSI FUNZIONA
+        function increment2($a, $b = 1){
+            echo $a * $b;
+        }
+
+        multiply(10);
+
+        COSI FUNZIONA
+        function increment2($a, $b = 1){
+            echo $a * $b;
+        }
+
+        multiply(10, 3);
+
+        Qui b prende 3, quindi quel $b = 1 è un'ultima spiaggia, cioe se non metto niente in $b diventa 1 
+
+        <!-- Parametri variabili = da utilizzare quando la quantità di parametri non è definita: splat operators ... -->
+
+        function(...$numbers){
+            // la media è 
+            $result = array_sum(numbers) / count($numbers);
+        }
+
+        media (posso mettere quanti parametri voglio)
+
+        Metterà tutti i numeri all'interno di un'array 
+
+        </div>
+
+    </div>
+
+    <!-- OOP = Object Oriented Programming - La programmazione ad oggetti -->
+    <div>
+        <!-- Definizione -->
+        E' un paradigma di programmazione -> un modo di programmare, un modo di strutturare i nostri dati
+        Il paradigma OOP si basa sul concetto di Classe!! 
+    </div>
+
+    <!-- Classe -->
+    <div>
+        <!-- Definizione -->
+        Classe - un insieme di proprietà che classificano gli oggetti dello stesso tipo
+
+        Non esistono oggetti veri e propri su php, ma gli oggetti si creano con le classi
+
+        <!-- Creazione classe -->
+        La Classe serve per creare un oggetto: 
+        Nome singolare con Lettera Maiuscola all'inizio, es. Person
+
+        class Person {
+            
+            <!--? Attributi: L'insieme delle proprietà comuni  -->
+
+            public $primacosa
+            public $secondacosa
+            si puo scrivere anche - public $primacosa, $secondacosa
+
+            <!--? Attributi Statici -->
+                <!-- Per tenere traccia di qualcosa di generale che dipende dall'intera classe, quindi in questo caso teniamo conto del numero di oggetti creati  -->
+            public static $counter = 0;
+
+
+            <!--? Funzione costruttore: Per creare oggetti di una classe si usa - funzione costruttore  -->
+                <!-- Possono essere anche modificati i parametri -->
+            public function __construct($_primacosa, &_secondacosa){
+                come va costruito l'oggetto
+                $this->primacosa = "Ciao"
+                $this->secondacosa = "Frato"
+            
+                <!-- Possiamo anche impostare delle regole su come vanno messi i parametri, questa cosa si chiama Composition -->
+                    <!-- Ricorda che php fa di tutto per non rompersi quindi magari se abbiamo messo stringa ma andiamo a mettere un numero, lui potrebe trasformarlo in stringa -->
+                es
+                public function __construct(string $_primacosa, int $_secondacosa){
+                    come va costruito l'oggetto
+                    $this->primacosa = "Ciao"
+                    $this->secondacosa = "Frato"
+
+
+
+                <!-- Qui ci mettiamo counter++, e per richiamare public static (attributi statici) si scrive cosi: Self::-->
+                Self::$counter ++;
+
+            }
+
+            <!--? Metodi: L'insieme di ciò che la persona può fare, -->
+                <!-- I metodi sono funzioni che si trovano all'interno della classe -->
+            
+            public function milionario(){
+                codice che scriviamo dopo
+            }
+
+            <!--? Metodi Statici -->
+            public static function printCounter(){
+                echo "Hai creato" . Self::$counter . "persone. \n";
+            }
+
+        }
+            
+       
+        <!-- Per creare oggetto  new    -->
+        $persona1 = new Person()
+            
+        <!-- Per accedere al Metodo  ->   -->
+        Person->milionario();
+
+        <!-- Per accedere agli Attributi Statici    ::   -->
+        Person::
+
+        <!-- Per accedere ai Metodi Statici   ::      -->
+        Person::    
+
+
+        <!-- Ereditarietà - Capacità di creare Sottoclassi - si dice figlio is-a di padre -->
+
+        class Person{
+            public $a;
+            public $b; 
+
+            public function__construct(parametro1, parametro2){
+                $this->a = parametro1;
+                $this->b = parametro2;
+            }
+        }
+         
+        <!--? Creiamo un'altra classe Teacher che può ereditare tutti gli attributi e tutti i metodi anche di person  -->
+        class Teacher extends Person{
+            public $c;
+
+            public function__construct(parametro1, parametro2, parametro3){
+                <!--? qui mi richiamo gli attributi dell'altra classe ed uso questa sintassi -->
+                parent::__construct(parametro1, parametro2)
+            }
+        }
+
+       
+        <!-- Classe Astratta - Una classe di cui non possiamo creare oggetti (questo è importante per mettere regole nel nosro programma)-->
+            <!-- Si mette "abstract" davanti alla classe, quindi se provo a creare un'oggetto con quella classe, non funziona -->
+            Esempio: Classe Person e sottoclassi insegnanti e studenti (person la creo perchè è fondamentale per far esistere insegnanti e studenti, quindi possono essere solo insegnati o studenti, ma in questo caso person non lo ulizzero mai perch l'ho creato solo come base per crearmi insegnanti e studenti e quindi person potrà diventare abstract )
+           
+            <!-- Funzione Astratta -->
+            Le funzioni astratte non possono avere contenuto ma obbligano le classi figlie ad avere la stessa funzione ma le classi figlie possono avere il contenuto
+            A cosa serve? perchè cosi quando creo le classi figlie, mi devo per forza ricordare che devo metterci quella funzione;
+
+
+
+        <!-- Access Modifier - Possibilità di accedere o meno a determinati dati -->
+            <!--? public - Possono accedere e modificare da fuori senza problemi -->
+            <!--? private - Non si può accedere ne modificare da fuori in nessun modo, nemmeno dalle sottoclassi, però dall'interno della classe ci posso accedere -->
+            <!--? protected - Non si può accedere ne modificare da fuori, ma si può dalle sottoclassi  -->
+
+
+        <!-- Trait - Mi permette di implementare gli stessi attributi o metodi, anche in classi completamente diverse -->
+
+        trait Mangiare {
+            public function mangiare(){
+                echo "qualcosa";
+            }
+        }
+
+            <!--? Per usare nelle classi questo trait si mette   use   all'interno della classe, la puoi mettere dove vuoi -->
+
+            class Person{
+                public $a;
+                public $b; 
+    
+                public function__construct(parametro1, parametro2){
+                    $this->a = parametro1;
+                    $this->b = parametro2;
+                }
+
+                use Mangiare;
+            }
+
+        <!-- Object Composition & Depenency Injection  -->
+            Si collegano due classi senza l'ereditarietà 
+
+            <!--? Esempio macchina Batman  --> 
+
+            <!-- Object Composition - has-a - La possibilità di creare oggetti con altri oggetti -->
+        
+
+            <!-- Dependency Injection - Iniezione delle dipendenze, cioè mettere delle regole -->
+                <!-- Anche qui si possono mettere delle regole, cioè tipo che come parametro deve mettere per forza un altro oggetto e non cose a caso. -->
+            
+            
+            <!-- Gli array di oggetti prendeono il nome di collezioni -->
+
+
+
     </div>
 </div>
