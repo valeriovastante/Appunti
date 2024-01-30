@@ -2454,10 +2454,6 @@ Iterazione
         - Oggetti (guarda dopo)
 
         <!-- 3) speciali= che non vedremo -->
-
-    
-
-    
     </div>
 
     <!-- Operatori -->
@@ -2843,7 +2839,235 @@ Iterazione
             
             <!-- Gli array di oggetti prendeono il nome di collezioni -->
 
+    </div>
+</div>
+
+<!-- LARAVEL -->
+<div>
+    <!-- Definizione e Come iniziare -->
+    <div>
+        E' un framework PHP per artigiani del Web.
+        Framework è un insieme è un insieme di librerie
+
+        La libreria la scriviamo noi e facciamo quello che vogliamo  facciamo quello di diciamo noi, possiamo modificarlo
+
+        Framework insieme di librerie, ma è lui che comanda, noi lo sfruttiamo per facilitarci il lavoro 
+
+        Composer è un gestione delle librerie
+
+        FUNZIONA CON  
+
+        Diversi framework di Java, Phyon, Lavarel, funzionano cosi 
+
+        Come commentare:
+        {{-- qui scrivere commento --}}
+        (scaricare le cose che ha detto Roberto per utilizzare ctrl-ù)
+
+        Il mio browser, l'unica cosa che vede è la cartella public
+
+        Non MODIFICARE MAI il il file example.env
+
+        Da sapere (ma non c'entra con l'argomento):
+        formato xml è l'antenato di json 
+        xml è un linguaggio di markup
+        Tipo serve per inviare delle fatture
+    </div>
+
+    <!-- MVC = Rotta  - Controller - Vista -->
+    <div>
+        Quando creo una pagina creo una Rotta in web.php (Route)
+        Poi creo Controller 
+        Poi creo la Vista
+
+        blade = è il template angy di  
+        Le pagine si modificano in resources -> views
+
+        <!-- Rotta: routes -> web.php -->
+        Rotta: richiedo dati ad un modello, blocco di codice;
+
+        Su web.php inseriamo le Rotte (Route::)
+
+        Esistono diversi tipi di rotte (get, put ecc)
+
+            <!-- Rotta di tipo get (richiesta) -->
+            get accetta parametri (la prima è "/", cioè un' URI, può andare solo su un'indirizzo)
+
+            es
+
+            Route::get('/', [PublicController::class, "welcome"]) -> name("welcome");
+            
+            <!--? "/" è la pagina iniziale, poi vai su PublicController e cercami la funzione "welcome", che di soprannome è "welcome"  -->
+
+            Route::get('/index/comics', [ComicController::class, "welcome"]) -> name("index_comics");
+
+            <!--? "/index/comics" = questo è l'URI e possiamo chiamarlo come vogliamo -->
+
+            <!--? name ("index_comics") è il soprannome che è importantissimo, questo serve per le regole della SEO, perché in futuro google mi potrebbe chiedere di modificare il nome '/index/comics', io modificandolo solo una volta e richiamandolo dove voglio grazie al soprannome, mi basta cambiarlo solo una volta  -->
+    
+            <!-- dd() -->
+                <div>
+                dd($title);
+                Serve  avedere le modifiche fino ad un certo punto
+                </div>
+
+        <!-- Controller -> (App -> Http -> Controllers ) -->
+
+
+    
+    </div>
+
+    <!-- Componenti  -->
+    <div>
+        Serve per non ripetere sempre le stesse cose
+        <!-- Creazioe -->
+        Creare cartella components dentro views
+            Creare file layout.blade.php 
+                Qui inserisco tutto ciò che è comune a tutte le pagine, parte iniziale e parte finale 
+            Creare file nav.blade.php 
+                Dove metterò la navbar
+            Poi esempio creerò footer.blade.php
+
+        uso {{$slot}} nella pagina layout, per indicare dove insrirò le cose nelle varie pagine
+        per collegare le cose  (nella pagina che voglio mettere)
+
+        In tutte le mie pagine metterò:
+            <x-layout>
+                Metterò tutto qui dentro
+            </x-layout>  
+    </div>
+
+    <!-- Node.js -->
+    <div>
+    Node.js Gestore di tutte le librerie di javascript (lato backend)
+    Composer Gestore di tutte le librerie di php 
+    Possiamo scaricare tutte le librerie di un determinato linguaggio
+
+        <!-- Come Installarlo -->
+        npm install (per installare tutte queste librerie sul nostro progetto)
+        installare anche la libreria bootstrap - cercare comando npm su sito di bootstrap e lanciarlo sul terminale 
+        <!-- c'è u sito "npm" che è un maxi motore di ricerca di tutte le librerie (tailwind concorrente bootstrap) -->
+        Sul nostro progetto per collegare le librerie scaricate al nostro progetto usiamo Laravel vite (ci permette di fare collegamento, quando lo usiamo ci sono un po' di configurazioni da fare )
+            andiamo ad incollarci il codice di vite al posto della cdn di bootstrap 
+            lanciamo "npm run dev" su terminale 
+            andare su resources - css - app.css e scrivere: @import 'bootstrap/dist/css/boostrap' (per importare tutte le classi di css di bootstrap)
+            andare su resources - js - app.js @import 'bootstrap/dist/js/bootstrap'
+        <!--? Git clone  -->
+            Quando prendi un progetto da github adesso dobbiamo fare cosi:
+            git clone
+            composer install per istallare le librerie di composer 
+            npm install  (npn = node packaging manager)
+        <!--? Creazione pagine css personalizzata  -->
+            creo su resources - css - un file .css
+            aggiungo una classe a caso
+            poi vado su app.css 
+            e inserisco @import "./filecreato.css"
 
 
     </div>
+    
+    <!-- Azioni quando si crea nuovo progetto -->
+    <div>
+    <!--? Cosa fare ogni volta quando si apre nuovo progetto -->
+        Ogni volta che partiamo con il progetto, lanciamo su due terminali diversi:
+            php artisan serve
+            npm run dev
+
+    <!--? Azioni quando si crea nuovo pogetto: -->
+        Laravel new 
+        git init 
+        git add . 
+        git commit -m 
+        git push 
+        npm install 
+        creare cartella components (per layout, navbar ecc) 
+        inserire all'interno del layout (@vite ecc ecc) (vite è come se ti stesse aprendo un altro server ) @vite(['resources/css/app.css', 'resources/js/app.js'])
+        importare le librerie di bootstrap in app.css = @import 'bootstrap/dist/css/boostrap'
+        importare le librerie di bootstrap in app.js = @import 'bootstrap/dist/js/bootstrap'
+        lanciamo php artisan serve
+        lanciamo npm run dev
+
+
+    </div>
+
+    <!-- Lanciare sito online -->
+    <div>
+    Online il server ha solo un terminale, quindi quando carico un sito online, non posso aprire 2 o più terminali, ma solo 1.
+    Ricorda che l'unica cartella che vede un browser online è public 
+    Quindi si usa un altro comando:
+        npm run build 
+            Ti va a creare una cartella all'interno di public che si chiama build con all'interno assets e due file css e js, questo praticamente crea questa cartella in cui ci sono gli elementi del file css e js (minificato, tutto come se fossi in una sola riga)
+            Questo lo faccio quando sto preparando un mio sito ad andare online 
+        Quando uso npm run build non posso fare più modifiche al file, altrimente non le legge il sistema
+        Per far vedere le nuove modifiche lanciare di nuovo "npn run dev" se voglio fare nuove modifiche o richiamare "npm run build" se voglio solo agiornare modifiche cho fatto 
+        
+        npm run dev è come se salvasse le modifiche su un disco locale 
+        npm run build è come se lanciasse le modifiche online
+
+    </div>
+
+    <!-- Inviare mail (esempio pagina contattaci)-->
+    
+    Creiamo sempre la rotta di tipo get 
+    Creiamo la funzione nel Controller
+    Creiamo la Vista 
+        Creiamo il form 
+
+    Creo una rotta di tipo post (cioè una rotta di tipo invio che userò per inviare dei dati)
+    Route::post('/submit-contact', [NomeClasseController::class, "submitContact"])->name('submit_contact')
+
+    Andiamo nel Controller e creiamo la funzione submitContact
+    Questa volta però usiamo la dependency injection, cioè gli mettiamo come parametro una classe Request, che ha il compito di prendere tutti i dati del form 
+        public function submitContact (Request $request)
+
+    Ora però dobbiamo fargli capire quali dati prendere, dobbiamo istruire il nostro ofrm, per farlo facciamo due cose:
+        1. Andiamo nel tag form -> nel tag input creiamo un attributo chiamato "name" per ognuno (email, tel, ecc.)
+        2. Andiamo ad istruire il mio form: Anche al tag "form" aggiungiamo due attributi
+                method = (che può essere "GET" o "POST") 
+                action = mettere la rotta
+
+        Mettiamo un @csrf sotto il tag "form" 
+
+    Quando creiamo la funzione Controller (guardiamo video)
+
+    Per provare ad inviare mail, usare mail trap 
+
+    Laravel da la possibilità di creare una classe mail:
+    Terminale:
+        php artisan make.mail ContactMail (creerà una cartella mail nella cartella app) 
+        Entriamo all'interno della cartella e vediamo il file ContactMail 
+        (da qui vedere video) 
+        
+    
+
+
+
+
+
+
+
+    <!-- Da sapere -->
+    Errori 400 sono errori lato client 
+    Error 500 sono errori lato backend
+
+
+
+
+</div>
+
+<!-- CLONARE PROGETTO -->
+<div>
+    1) git clone + chiave ssh 
+    Apriamo primo terminale:
+    2) cp .env.example .env 
+    3) composer install 
+    4) php artisan serve 
+    Apriamo secondo terminale:
+    5) npm install 
+    6) npm run dev 
+    Apriamo terzo terminale.
+    7) php artisan key:gen
+
+    Per richiamare delle modifiche dopo che hai fato almneo una volta il clone:
+    1) git pull 
+    2) se un collega ha aggiunto delle librerie, dopo git pull, lanciare composer install
 </div>
