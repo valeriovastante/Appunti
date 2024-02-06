@@ -2950,7 +2950,7 @@ Iterazione
             andiamo ad incollarci il codice di vite al posto della cdn di bootstrap 
             lanciamo "npm run dev" su terminale 
             andare su resources - css - app.css e scrivere: @import 'bootstrap/dist/css/boostrap' (per importare tutte le classi di css di bootstrap)
-            andare su resources - js - app.js @import 'bootstrap/dist/js/bootstrap'
+            andare su resources - js - app.js import 'bootstrap/dist/js/bootstrap'
         <!--? Git clone  -->
             Quando prendi un progetto da github adesso dobbiamo fare cosi:
             git clone
@@ -2978,15 +2978,36 @@ Iterazione
         git add . 
         git commit -m 
         git push 
-        npm install 
+        npm install (o npm i bootstrap, cosi mi installa già bootstrap)
+            se hai fatto solo npm, devi andarti a prendere anche la npm sul sito di bootstrap
         creare cartella components (per layout, navbar ecc) 
-        inserire all'interno del layout (@vite ecc ecc) (vite è come se ti stesse aprendo un altro server ) @vite(['resources/css/app.css', 'resources/js/app.js'])
-        importare le librerie di bootstrap in app.css = @import 'bootstrap/dist/css/boostrap'
-        importare le librerie di bootstrap in app.js = @import 'bootstrap/dist/js/bootstrap'
+        inserire all'interno del layout: @vite(['resources/css/app.css', 'resources/js/app.js']) 
+             (vite è come se ti stesse aprendo un altro server ) (si chiama asset bundling)
+        importare le librerie di bootstrap in app.css e in app.js 
+            su app.css = @import 'bootstrap/dist/css/bootstrap';
+            su app.js = import 'bootstrap/dist/js/bootstrap';
         lanciamo php artisan serve
         lanciamo npm run dev
 
 
+    </div>
+
+    <!-- Clonare Progetto -->
+    <div>
+    1) git clone + chiave ssh 
+    Apriamo primo terminale:
+    2) cp .env.example .env 
+    3) composer install 
+    4) php artisan serve 
+    Apriamo secondo terminale:
+    5) npm install 
+    6) npm run dev 
+    Apriamo terzo terminale.
+    7) php artisan key:gen
+
+    Per richiamare delle modifiche dopo che hai fato almneo una volta il clone:
+    1) git pull 
+    2) se un collega ha aggiunto delle librerie, dopo git pull, lanciare composer install
     </div>
 
     <!-- Lanciare sito online -->
@@ -3005,69 +3026,409 @@ Iterazione
 
     </div>
 
-    <!-- Inviare mail (esempio pagina contattaci)-->
-    
-    Creiamo sempre la rotta di tipo get 
-    Creiamo la funzione nel Controller
-    Creiamo la Vista 
-        Creiamo il form 
+    <!-- Inviare mail (esempio pagina contattaci) (secondoProgettoAnime)-->
+    <div>
+   <!--? Scopo della lezione -->
+    Utente esterno vuole contattare la pagina web tramite la pagina contattaci  
+    Quando compilerà i campi nella pagina contattaci, dopo aver premuto Invio, il sistema dovrà prendere tutti i dati inseriti ed inviare prima una mail all'utente (grazie per averci contattato) e poi una mail al gestore del sito (ti ho contattato Tizio)
 
-    Creo una rotta di tipo post (cioè una rotta di tipo invio che userò per inviare dei dati)
-    Route::post('/submit-contact', [NomeClasseController::class, "submitContact"])->name('submit_contact')
+    <!--? Step per farlo -->
+        <!--? 1) Creiamo la pagina contattaci con il form all'interno dove verranno inseriti i dati dell'utente -->
+        Creiamo sempre la rotta di tipo get 
+        Creiamo la funzione nel Controller
+        Creiamo la Vista 
+            Creiamo il form 
 
-    Andiamo nel Controller e creiamo la funzione submitContact
-    Questa volta però usiamo la dependency injection, cioè gli mettiamo come parametro una classe Request, che ha il compito di prendere tutti i dati del form 
-        public function submitContact (Request $request)
+        <!--? 2) Creiamo una rotta di tipo post (cioè di tipo Invio) che userò per inviare quei dati  -->
+        Creo una rotta di tipo post
+        Route::post('/submit-contact', [NomeClasseController::class, "submitContact"])->name('submit_contact')
 
-    Ora però dobbiamo fargli capire quali dati prendere, dobbiamo istruire il nostro ofrm, per farlo facciamo due cose:
-        1. Andiamo nel tag form -> nel tag input creiamo un attributo chiamato "name" per ognuno (email, tel, ecc.)
-        2. Andiamo ad istruire il mio form: Anche al tag "form" aggiungiamo due attributi
-                method = (che può essere "GET" o "POST") 
-                action = mettere la rotta
+        <!--? 3) Dobbiamo salvare questi dati che sono stati inviati-->
+            <!--? 3.1)  Creiamo la funzione nel Controller -->
+            Andiamo nel Controller e creiamo la funzione 
+            Usiamo la dependency injection (che produce oggetti!!!) usando come parametro la classe Request
+                Request = ha il compito di prendere tutti i dati del form che inseriamo all'interno del tag input
+                public function submitContact (Request $request)
 
-        Mettiamo un @csrf sotto il tag "form" 
+            <!--? 3.2)  Dobbiamo istruire il nostro form per prendere quei dati -->
+            1. Diamo un nome agli input
+                Andiamo nel tag form -> nel tag input creiamo un attributo chiamato "name" per ognuno (email, tel, ecc.) (serve per dare un nome agli input, cosi Request sa quali dati prendere)
+            2. Istruiamo il form: Aggiungiamo due attributi al tag form
+                - method = (che può essere "GET" o "POST") (con post gli diciamo, devi inviare qualcosa)
+                - action = mettere la rotta - "{{route('submit_contact')}}" - in questo caso gli abbiamo dato la strada verso cui deve inviare quei dati (quindi la rotta tipo post che abbiamo messo in web.php)
+            3. Mettiamo un @csrf sotto il tag "form" 
+                csrf = quando noi andiamo ad inviare una richiesta, dobbiamo sempre inserire csfr che ci consente di dire al server, vedi che questa richiesta che ti sta arrivando, arriva da questo pc; questo csfr è un token grazie al quale il server riconosce da quale computer arriva la richiesta, ed è una prima protezione dagli attacchi DOS (cioè quando viene sovraccaricato di richieste)
+                
+        <!--? 4) Dobbiamo recuperare questi dati e salvarli -->
+        Andiamo nella funzione creata nel Controller e recuperiamo i nostri dati mettendoli in una variabile 
 
-    Quando creiamo la funzione Controller (guardiamo video)
-
-    Per provare ad inviare mail, usare mail trap 
-
-    Laravel da la possibilità di creare una classe mail:
-    Terminale:
-        php artisan make.mail ContactMail (creerà una cartella mail nella cartella app) 
-        Entriamo all'interno della cartella e vediamo il file ContactMail 
-        (da qui vedere video) 
+        <!--? 5) Impostiamo mail per il test -->
+        1. Andare nel file .env e qui troveremo la sezione Email con i vari dati 
+            Per inviare mail di test possiamo utilizzare dei servizi esterni (tipo mailtrap) 
+            Colleghiamo il progetto tramite il servizio di mail
+        2. Laravel da la possibilità di creare una classe mail:
+            Terminale: php artisan make.mail ContactMail (creerà una cartella mail nella cartella app) 
+            Entriamo nella cartella app -> Mail -> e vediamo il file ContactMail (vediamo il progetto dove ho messo i vari commenti)
+            
+        <!--? 6) Recuperiamo i dati per inviare mail -->
+        Da chi viene inviata? 
+            su .env ci sarà 
+                MAIL_FROM_ADDRESS = mail per risponde
+                MAIL_FROM_NAME = nome della persona
         
-    
+        <!--? 7) Impostiamo indirizzo che invierà la mail e il nome della persona  -->
+        Nel File Contact Mail andiamo nella funzione Envelope 
+        
+        <!--? 8) Configuriamo la mail, per creare la vista cioè il contenuto della mail (sarà una pagina HTML) -->
+            <!--? 8.1) Creiamo file per il corpo della mail -->
+            Creiamo una cartella mail nella views
+            Creiamo un file all'interno di mail 
+                Qui creeremo il corpo della mail 
+                Qui possiamo prendere la CDN di bootstrap 
+            <!--? 8.2) Colleghiamo il file con il Contactmail (nella funzione content) --> 
+            <!--? 8.3) Personalizzare la mail, andare nel Controller -->
+                <!--? 8.3.1) Andiamo in ContactMail e passiamo attributo nella classe e poi nella funzione costruttore cosi possiamo prenderci i dati nell'html della mail-->
+            
+        <!--? 9) Impostiamo indirizzo che riceverà mail  -->
+            <!--? 9.1) Salviamo i dati che ci servono in un'unica variabile -->
+            Andiamo nel Controller e nella funzione dove abbiamo recuperato i nostri dati mettiamo tutto in un'unica variabile  
+            <!--? 9.2) Mandare un nuovo oggetto di classe ContactMail alla mail che ha inserito -->
+        
+        <!--? 10) Reindirizzamento con messaggio dopo aver premuto Invio  -->
+            <!--? 10.1) Andare nella funzione del Controller (dopo la parte per inviare mail)--> 
+            <!--? 10.2) Prendiamo dalla documentazione Redirecting With Flashed Session Data e copiamo il codice if nella pagina dove vogliamo reindirizzare l'utente -->
 
+        <!--? Se voglio inviare mail anche all'amministrtore del sito, per avvisarlo che è arrivata una mail, devo creare un'altra mail  -->
 
+    </div>
 
-
-
-
-
-    <!-- Da sapere -->
+    <!-- Errori 400 e 500 & dd()  -->
+    <div>
     Errori 400 sono errori lato client 
     Error 500 sono errori lato backend
-
-
-
+    dd() importantissimo, ci permette di capire che dati ci stanno arrivando
+    dd($variabile ->all()) ci fa vedere i dati che ci servono
+    </div>
 
 </div>
 
-<!-- CLONARE PROGETTO -->
-<div>
-    1) git clone + chiave ssh 
-    Apriamo primo terminale:
-    2) cp .env.example .env 
-    3) composer install 
-    4) php artisan serve 
-    Apriamo secondo terminale:
-    5) npm install 
-    6) npm run dev 
-    Apriamo terzo terminale.
-    7) php artisan key:gen
+<!-- DATABASE e MySql -->
+    <div>
+        <!-- Definizione -->
+        MySql 
+            - è un sistema per gestire più database
+            - non è il nome di un database
+            - è un database relazionale
+            - funziona a tabella   
+                - Modello relazionale = accoppiata valore con un dato 
+                Ogni campo avrà una tipologia di dato 
+                Non possono esserci immagini o file, perché vengono salvati in uno storage e mi salvo il percorso
+    
+        <!-- Usare Mysql su GitBash -->
+        Comando su GitBash: winpty mysql -u root -p
+            Con questo comando entro nel terminale di mysql 
+        Su terminale mysql:
+            - posso creare, modificare e gestire database
+            - Usare sempre ; alla fine 
 
-    Per richiamare delle modifiche dopo che hai fato almneo una volta il clone:
-    1) git pull 
-    2) se un collega ha aggiunto delle librerie, dopo git pull, lanciare composer install
-</div>
+        Creare Database:
+            create database videogames125;
+
+        Vedere i database:
+            show databases;
+
+        Collegare database al nostro laravel 
+            Andiamo su file .env 
+            sezione DB   
+            Mettiamo nome database che abbiamo scritto nel terminale quando abbiamo creato 
+
+        Come faccio a portare i miei dati laravel in un database tramite le tabelle?
+            cartaella database->migrations 
+            Queste sono migrazioni (non sono tabelle) 
+            All'interno delle migrazioni troviamo:
+                funzione up = serve a creare un tabella (viene lanciata con un determinato comando) 
+                funzione down = serve a distruggere 
+    </div>
+
+    <!-- Modelli -->
+    <div>
+        I modelli sono come lo stampino per creare oggetti 
+        Ho deciso un modello e creerò gli oggetti in base a quel modello 
+
+        Creazione modello:
+            - Andiamo su terminale 
+            - php artisan make:model Videogame (quindi il nome deve essere in inglese, unico con lettera maiuscola iniziale, DEVE ESSERE SCRITTO SEMPRE COSI)
+                <!--? Chi è Eloquent ORM (object-relational mapper):   -->
+                Mi serve per mappare un oggetto da una classe e farci qualcosa, in questa caso trasporterà il mio modello con il mio setting in una riga all'interno del database 
+                E' colui che permette di far comuniare php e il mio database sql, è come se fosse un taduttore, che traduce dal linguaggio php in sql 
+                E' colui che trasforma i mysql in oggetti php 
+
+
+
+            - Adesso su app->Models->c'è il file che ho creato 
+            Per poter creare la tabella nel quale vado a salvare i dati, devo utilizzare le migrations 
+            Devo progettare la tabella: 
+                Per farlo creo prima la migrazione:
+                - terminale: php artisan make:migration create_videogames_table
+                - si creerà un file in: database -> migrations -> il nome che ho inserito
+                - di default, mi creerà una funzione up ed una down
+                - All'interno di up ci sarà una Classe Schema con all'interno i dati da salvare:
+                    Chiave primaria (id):
+                        - serve ad identificare in maniera univoca una riga all'interno di una tabella, quindi fa diventare tutti i campi di una riga (in inglese record) di una tabella univoca, quindi con una chiave primaria non posso avere due record identici 
+                        - Se eliminiamo un record interno, non possiamo utilizzare di nuovo quella chiave primaria 
+                    Altri dati, tipo string, char, text,  ecc. 
+                        - differenza tra string e chart 
+                            string('title') =  possiamo mettere fino a 255 caratteri
+                            char('year', 4) = obbliga a mettere 4 caratteri
+            Una volta fatto questo devo lanciare php artisan migrate per creare tutte le migrazioni (crea tutte le migrazioni non lanciate) (qui ordine dalla meno recente a quella più)
+                php artisan migrate: attiva la funzione up
+            php artisan migrate:status = mi fa vedere le varie migrazioni in che fase sono 
+                Il batch ci fa capire se sono state lanciate nello steso momento 
+            Dopo aver fatto la migrazione, se io voglio variare i dati, non posso semplicemente cancellare le voci ma 
+                Dobbiamo buttare giù tutto, quindi tipo eliminare la migrazione con: php artisan migrate:rollback (qui ordine dalla più receno a quella meno)
+                Rollback ti butta giù tutti i dati di tutte le tabelle, quindi ho perso tutti i dati in questo modo, 
+                    php artisan migrate:rollback: attiva la funzione down
+                Se invece voglio buttare giù solo un pezzo alla volta: php artisan migrate:rollback --step=1 (cioè vai indietro di 1, cioè butta giù l'ultima migrazione) (che diventerà di stato "pending")
+                    se poi faccio di nuovo php artisan migrate = mi ricrea solo l'ultima migrazione (ma avrà batch 2)
+                    se faccio migrate:rollback (mi elimina solo quell'ultima, perché elimina in base al batch, quidni prima elimina quello di bach 3,poi 2, poi 1 ecc.)
+            C'è un altro comando CHE DEVE ESSERE USATO SOLO IN FASE DI TEST, MAI IN FASE DI PRODUZIONE: 
+                php artisan migrate:fresh (butta giù tutte le migrazioni in modo brutale, tabelle e ricrea le migrazioni)
+                php artisan migrate:refresh (butta giù tutte le migrazioni, tabelle e ricrea le migrazioni, passando per le rollback)
+
+            
+            Per vedere le tabelle, ci sono due modi:
+                - TablePlus
+                - Estensioni
+                - Terminale Mysql 
+                    <!--! Chiedere in base a cosa mysql capisce il mio database, quando metto use videogames125 esempio  -->
+                    entro prima nel database 
+                    - describe videogames: mi fa vedere le tabelle 
+                    - show tables:mi fa vedere i nomi delle tabelle create
+
+            Se ho creato delle tabell con delle righe, tutte le righe devono essere rimpite per forza!!! Se non ho dati da inserire, metterò NULL.
+
+            Sul videogioco andremo a effettuare una serie di operazioni (CRUD: create, read, update, delete) = Creazione, lettura, cancellazione, aggiornamento
+
+        <!--todo conftronta tutto questo con il file laravel: progetto VideogamesMysql -->
+        <!--? Quindi i passaggi sono: -->
+        Creazione struttura tabella (all'interno della migrazione)
+        Creare Modello (php artisan make:Model Videogame)
+            All'interno del modello creo protected $fillable, con i tuoi campi, quelli che hai inserito nella tabella(stai facendo uno stampino)
+        Creiamo Controller e all'interno :
+            funzione per la vista del form di inserimento dati (rotta get)
+            funzione per la creazione della risorsa, dove salvo i dati nel database (rotta post)
+                Mass Assignment 
+                &variabile = Modello::create, quindi vado a creare un oggetto di classe Modello e dentro ci vado a mettere le varie cose
+    </div>
+
+    <!-- Rotta Parametrica -->
+    <div>
+    Guardare progettoVideogamesMysql
+    </div>
+    
+    <!-- Storage Validation Rules -->
+    <div>
+    Salvare qualcosa all'interno del progetto, esempio immagini 
+    Le immagini devono essere massimo 2 mega
+    Voglio dare la possibilità all'utente di inserire un'immagine 
+    Quindi dbbiamo aggiungere alla nostra tabella un nuovo record, ma senza buttare giù tutto 
+    php artisan make:migration add_img_column_to_videogames_table
+
+    Quando salviamo i dati di un'immagine su Mysql, li cripta con la chiave che troviamo sul file .env 
+
+    Per mostrare l'immagine all'interno della mia pagina ho bisogno di creare un collegamento nella cartella public (perché è l'unica che vede il browser)
+    php artisan storage:link 
+        con questo comando copio la cartella storage all'interno di public 
+
+    Se invece voglio inserire una foto di default per le mie card
+        - Prendo l'immagine  e la copio nella cartella storage->app->public->img
+    </div>
+
+    <!-- Errore Validazione -->
+    <div>
+    Se inseriamo dati sbagliati
+    Vncolo integrità = è quel qualcosa che mi permette al database di non rompersi, è una protezione che i creatori di Mysql hanno deciso di creare nel caso in cui un programmatore faccia una cazzata, cioè dove non ha messo un controllo per i dati in ingresso 
+
+    Per evitare questi problemi devo creare delle regole di Validazione 
+
+    php artisan make:request Nome -  mi permette di mettere delle regole quindi gli posso dire 
+        - cosa fare
+        - cosa puoi prenderti
+        - cosa ho sbagliato
+    Su Laravel ci sono tutte le regole che posso impostare 
+        Mi crea un file .php dentro la cartella Requests 
+
+
+    Per vedere gli errori, cercare su google laravel error validation, mi prendo il codice  e lo metto all'interno della vista 
+    </div>
+
+    <!-- Authentication (progettoVideogamesMysql) -->
+    <div>
+        Autenticazione = Registrazione di un utente, teniamo traccia dell'utente 
+            Password deve essere criptata
+        
+        1. Installiamo Libreria esterna Fortify (quando installiamo libreria esterna, ricordati di vedere sempre la documentazione della libreria) (quando faremo clonazione progetto, la persona che si clonerà progetto, dovrà installare le nuove librerie se non le ha)
+            Fotify non ha front end
+            Per installare, lanciare su terminale: 
+            - composer require laravel/fortify
+            - php artisan vendor:publish -provider="Laravel\Fortify\FortifyServiceProvider"
+            - lanciare migrazioni: php artisan migrate 
+            - Aggiungere nella cartella config-> nel file app.php nella sezione providers(riga 171): App\Providers\FortifyServiceProvider::class
+            - (Registrazione) Aggiungere nella cartella app-> providers -> file FortifyServiceProvider -> nella funzione boot: 
+                Fortify::registerView(function () {
+                    return view('auth.register');
+                });
+            - (Autenticazione) Aggiungere nella cartella app-> providers -> file FortifyServiceProvider -> nella funzione boot: 
+                Fortify::loginView(function () {
+                    return view('auth.login');
+                });
+
+        2. Creare nella cartella views una cartella auth, creare nella cartella auth i file login.blade.php e register.blade.php
+
+        3. Le rotte sono già incluse in fortify, per vedere lanciare questo comando su terminale:
+        php artisan route list
+
+        4. Riempire i file login e register
+            4.1 Creare File register = 
+            - Creiamo il form per la regitrazione (da bootstrap)
+            - Aggiungiamo i name sui campi input (vedili sulla documentazione) 
+            - Inserire action con la rotta che abbiamo già (register, data da fortify)
+            - Inserire method di tipo post
+            - Inserire @csrf
+            4.2 Creare fFle Login = Simile al file register, ma da variare:
+            - la rotta
+            - i name su input (guarda documentazione)
+        
+        5. Collegare la vista alla Navbar
+
+        6. Mettiamo gli errori di validazione
+
+        7. Di base dopo che inseriamo i dati sul form, ti porta direttamente in /home (che noi non abbiamo) quindi la modifichiamo:
+        - app ->Providers -> RouteServiceProvider 
+            Variare public const HOME = '/';
+        - config -> fortify 
+                variare 'home' = '/',
+
+        8. Proviamo ad inserire dati e vediamo se si vedono su Database 
+
+        9. Quando facciamo l'accesso, dopo non riusciremo ad accedere a Registrati e Accedi, perché fortify mi blocca l'accesso (perché noi già siamo loggati in quel caso)
+            9.1 In questo caso creo sulla navbar il campo Benvenuto utente (guarda file) 
+
+        10. Sezione Logout, nella nav
+        - Creo form con action logout (da fortify) e method post
+        - Metto un button con scritta Logout
+        - Metto un tipo di if che ci da laravel (possiamo decidere noi quale dei due usare )
+            - @guest/@endguest = se utente è ospite, mostrami tutto ciò che c'è all'interno di @guest (guarda navbar)
+            - @auth/@endauth = se utente è autenticato, mostrami tutto ciò che c'è all'interno di @auth
+
+        11. Protezione (Middleware) (per non permettere di entrare in alcune pagine quando non sei loggato) (senza Middleware se tipo hai l'URI di una pagina in cui non sei loggato, riesci a vedere lo stesso cose che non potresti vedere)
+            11.1 Andiamo nel Controller -> Creiamo funzione construct, middleware (guarda funzione)
+    </div>
+
+    <!-- CRUD = Create, Read, Update, Delete -->
+    <div>
+        <!-- Create & Read -->
+        Database:
+        Create = (fatto con form tramite rotta "post" e funzione submit)
+        Read = (fatta attraverso index e e rotta di dettaglio )
+
+        <!-- Update -->
+        <div>
+        Update= Aggiornare dati Database (esempio utente che vuole modificare i dati che ha inserito)
+        Due modalita per Effettuare Update:
+            put: prende tutta la risorsa, si fa la modifica e sovrascrive tutto
+            petch = prende un pezzettino della risorsa e modifica quel pezzettino
+
+        Update put (vedremo solo questa)
+        1. web.php -> Creazione rotta parametrica di tipo get per form di aggiornamento
+
+        2. Creare funzione all'interno del controller 
+
+        3. Mettiamo bottone (per la modifica) nella pagina di dettaglio 
+            - Creiamo un <a href> </a> che mi porterà alla pagina della modifica 
+
+        4. Creare vista di nome edit all'interno di view (dove utente modificherà i dati) 
+            4.1 Ci copiamo il form dell'inserimento dei dati 
+            4.2 Attributo value nel tag input per avere i campi già riempiti  (questo perché quando l'utente va a modificare una card, vuole avere i campi già compilati che poi andrà a modificare e non scriverli da capo)
+                4.2.1 Usiamo il paramentro normale 
+                4.2.2 Usiamo old(),  (video 1:28:00)
+
+        5. web.php -> Creo rotta parametrica di tipo put (prende tutta la risorsa e poi sovrascrive, sovrascive proprio sul database, tranne l'ID)
+
+        6. Nella vista, nel form mettiamo:
+            method="POST"
+            action="la nuova rotta creata"
+            @method('PUT') sotto @csrf = questo serve per la sovrascrizione 
+
+        7. Controller -> creare funzione update (per fare la sovrascrittura) (vedi progetto)
+            - l'utente se non ha inserito nessuna nuova immagne, puo essere usata quella che c'era prima, se invece se inserisce nuova immagine, la sovrascrive 
+            - Anche i dati nel database sono cambiati, l'unico che non è cambiato è l'ID 
+        </div>
+
+        <!-- Delete Record DB -->
+        <div>
+        1. web.php -> rotta parametrica per cancellazione risorsa e distruzione record dentro il DB
+
+        2. controller -> creare la funzione destroy 
+
+        3. Su vista edit -> creiamo nuovo form per eliminare i dati (risorsa e record dal DB)
+            Quando eliminiamo un record dal database, quell'ID non potra essere più riempito 
+        </div>
+    </div>
+
+    <!-- Comdanti My sql -->
+    use nomedatabase = per accedere al database
+    select a from b = ti fa vede la colonna a di b
+    describe a = ci fa vedere la tabella di a
+
+    <!-- Domande colloquio -->
+    Cos è un framework mvs 
+    Cosa sono le rotte 
+    Cosa sono le migrazioni 
+
+    <!-- Per fare Layout  durante progetto finale-->
+    Deluxe layout 
+
+
+
+    <!-- Appunti Pier su Data Base -->
+    <div>
+        SCALETTA CREAZIONE FILE:
+        -cd wa
+        -laravel new nomefile
+        -procedimenti composer(none, 0, no, mysql
+        -cd nomefilelaraverl
+        -npm install (porto le liberie) o direttamnete npm i bootstrap.
+        -incollo la libreria boostrap presente sul sito: npm i bootstrap@5.3.2
+        (npm i bootstrap lancia contemporaneamente npm install e bootstrap).
+        -settare scaffoldind del progettto(ovvero creare cartella components, creare file layout.blade.php)
+        -copio e incollo la vite del sito laravel nella head del layout: @vite(['resources/css/app.css', 'resources/js/app.js']) e tolgo link di css e script di js.
+        -vado in resources->apro cartella ccs->apro file app.css e scrivo= @import 'bootstrap/dist/css/bootstrap'.  (se voglio fare il mio css, dovo aver creato il file css nella stessa cartella, metto @import './mio.css' nell'app.css. Vale lo stesso per js.
+        -vado in resources->apro cartella js->apro file app.js e scrivo= import 'bootstrap/dist/js/bootstrap'.
+        -apro primo terminale e lancio php artisan serve.
+        -apro un secondo terminale e scrivo npm run dev.
+
+        DATABASE:
+        Ingresso al server mySQL tramite gitBash:
+        -winpty mysql -u root -p;
+        -password:1997
+        -create database nomedatabase;
+        -show databases; (opzionale, serve per vedere database già presenti)
+        tornare sul progtto
+        -andare nel file .env
+        -riga 11-16, cambiare nome al database mettendo quello del db appena creato, mettere password accesso al server mysql
+        (quite o exit per uscire 
+        aprire terminale:
+        fare modello
+        -php artisan make:model Nomemodello(creazionemodello, si scrive al singolare e con la prima lettera maiuscola)
+        -php artisan make:migration
+        create_(nomemodelloalplurale)_table(creazione migrazione)
+        tornare nel progetto e fare:
+        -inserire campi in database->migrations->file di migrazione creato precedentemente
+        tornare sul terminale:
+        -php artisan migrate per lanciare migrazioni create
+        -(opzionale)php artisan migrate:status serve per verificare lo stato delle migrzioni.
+
+    </div>
+
+
